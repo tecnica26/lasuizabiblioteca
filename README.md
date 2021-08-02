@@ -20,14 +20,5 @@ _Tecnologias backend_
 * **Brandon Porcel** - *Desarollo, Diseño* - [brandonporcel](https://instagram.com/brandonporcel)
 // * **PEPELINA PEPE** - *Documentación* - [escuela](#fulanito-de-tal)
 
-## Expresiones de Gratitud 🎁
-
-* Comenta a otros sobre este proyecto 📢
-* Invita una cerveza 🍺 o un café ☕ a alguien del equipo. 
-* Da las gracias públicamente 🤓.
-* etc.
-
-
-
 ---
 que lo disfrutes
