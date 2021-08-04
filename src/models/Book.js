@@ -13,7 +13,8 @@ const BookSchema = new Schema(
 		stars: { type: Number, required: false },
 	},
 	{
-		timestams: true,
+		collection: 'books',
+		timestamps: true,
 	}
 );
 module.exports = model('Book', BookSchema);
