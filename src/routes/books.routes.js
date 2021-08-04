@@ -2,11 +2,22 @@ const express = require('express');
 const router = express.Router();
 
 const {
-	renderSettings,
+	renderIndex,
+	renderSearchResults,
 	renderMyBooks,
+	renderSettings,
 } = require('../controllers/books.controller');
 
-router.get('/settings', renderSettings);
+// home
+router.get('/', renderIndex);
+
+// busqueda
+router.get('/search/title/:searchQuery', renderSearchResults);
+
+// mis libros
 router.get('/:username/books', renderMyBooks);
+
+// configs
+router.get('/settings', renderSettings);
 
 module.exports = router;
