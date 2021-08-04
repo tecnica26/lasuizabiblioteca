@@ -12,7 +12,7 @@ const {
 router.get('/', renderIndex);
 
 // busqueda
-router.get('/search/title/:searchQuery', renderSearchResults);
+// router.get('/search/title/:searchQuery', renderSearchResults);
 
 // mis libros
 router.get('/:username/books', renderMyBooks);
