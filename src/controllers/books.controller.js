@@ -9,6 +9,9 @@ booksController.renderIndex = async (req, res) => {
 		}).lean();
 		searchResultsArray= searchResults;
 	}
+
+console.log(searchResultsArray,"searchResultsArray");
+
 	const books = await Book.find({
 		$and: [{ stars: { $exists: true } }, { stars: { $gte: 3 } }],
 	}).lean();

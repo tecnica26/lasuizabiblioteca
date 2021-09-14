@@ -1,6 +1,3 @@
-{{#each searchResultsArray}}
-
-
 	    <table border="1px" class="crud-table">
         <thead>
             <tr>
@@ -12,11 +9,18 @@
                 <th>🌟</th>
             </tr>
         </thead>
+{{#each searchResultsArray}}
+
+
         <tbody>
             <tr>
 				<td class="template-name"> {{this.title}} </td>
 				<td class="template-artist"> {{this.author}} </td>
+				<td class="template-artist"> {{this.editorial}} </td>
+				<td class="template-artist"> {{this.shelf}} </td>
+				<td class="template-artist"> {{this.quantity}} </td>
+				<td class="template-artist"> {{this.stars}} </td>
 			</tr>
         </tbody>
-	</table>
 {{/each}}
+	</table>
