@@ -19,7 +19,6 @@ app.engine(
 app.set('view engine', '.hbs');
 
 // rutas
-app.use(require('./routes/index.routes'));
 app.use(require('./routes/books.routes'));
 
 // archivos estaticos--------------------------
