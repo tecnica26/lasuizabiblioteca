@@ -1,0 +1,22 @@
+{{#each searchResultsArray}}
+
+
+	    <table border="1px" class="crud-table">
+        <thead>
+            <tr>
+                <th>Titulo</th>
+                <th>Autor</th>
+                <th>Editorial</th>
+                <th>Estante</th>
+                <th>Cantidad</th>
+                <th>🌟</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+				<td class="template-name"> {{this.title}} </td>
+				<td class="template-artist"> {{this.author}} </td>
+			</tr>
+        </tbody>
+	</table>
+{{/each}}

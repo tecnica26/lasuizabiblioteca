@@ -1,5 +1,11 @@
 <hr />
 <h1 onclick={console.log("hola")}>the creator has a master plan</h1>
 {{>searcher}}
+<hr>
+
+<h3>resultados de busqueda</h3>
+{{>searchResults var=searchResultsArray}}
+<hr>
+<h3>recomendados</h3>
 {{>recbooks var=books}}
 <hr />
