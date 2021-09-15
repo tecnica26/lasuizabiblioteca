@@ -63,9 +63,21 @@ body {
 	background-color: var(--white-hover);
 }
 /* ------------------------------------------------------ */
+.recbooks-sort-nav {
+	display: flex;
+	justify-content: space-between;
+}
+.recbooks-sort-nav-title {
+	margin-top: 0;
+}
+.recbooks {
+	height: 200px;
+	overflow-y: auto;
+}
+/* ------------------------------------------------------ */
 .footer {
 	margin-top: 50px;
-	height: 140px;
+	height: 100px;
 	background-color: var(--secondary-color);
 }
 /* ------------------------------------------------------ */
@@ -75,4 +87,6 @@ li {
 a {
 	text-decoration: none;
 	color: inherit;
+}
+img {
 }

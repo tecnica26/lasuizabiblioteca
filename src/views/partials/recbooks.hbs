@@ -1,3 +1,19 @@
-{{#each books}}
-	<img src={{this.imageUrl}} alt='img de lib recs' />
-{{/each}}
+<div class='recbooks-section-container'>
+	<nav class='recbooks-sort-nav'>
+		<h3 class='recbooks-sort-nav-title'>Recomendados</h3>
+		<div class='recbooks-sort-container'>
+			<label for='sort-by'>Ordenar por</label>
+			<select name='sort-by' class='select' id='sort-by-select'>
+				<option value='-'>-</option>
+				<option disabled='' value='title'>Titulo</option>
+				<option value='author'>Autor</option>
+			</select>
+		</div>
+	</nav>
+
+	<div class='recbooks'>
+		{{#each books}}
+			<img src={{this.imageUrl}} alt='img de lib recs' />
+		{{/each}}
+	</div>
+</div>

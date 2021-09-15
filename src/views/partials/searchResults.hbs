@@ -1,5 +1,4 @@
 {{#if searchResultsArray}}
-
 	<h3>Resultados de Busqueda</h3>
 	<table border='1px' class='crud-table'>
 		<thead>
@@ -25,4 +24,6 @@
 			</tbody>
 		{{/each}}
 	</table>
+{{else}}
+	{{!-- <h3>no se encontraron resultados para "{{query}}"</h3> --}}
 {{/if}}

@@ -3,20 +3,22 @@ const Book = require('../models/Book');
 // home
 booksController.renderIndex = async (req, res) => {
 	let searchResultsArray = [];
+	const query = req.query.search;
 	// BUSQUEDA
-	if (req.query.search) {
+	if (query) {
 		const searchResults = await Book.find({
-			title: { $regex: '.*' + req.query.search + '.*', $options: 'i' },
+			title: { $regex: '.*' + query + '.*', $options: 'i' },
 		}).lean();
 		searchResultsArray = searchResults;
 	}
 	console.log(searchResultsArray);
+	console.log(query);
 	// RECOMENDADOS
 	const books = await Book.find({
 		$and: [{ stars: { $exists: true } }, { stars: { $gte: 3 } }],
 	}).lean();
 
-	res.render('index', { books, searchResultsArray });
+	res.render('index', { books, searchResultsArray, query });
 };
 
 booksController.renderMyBooks = (req, res) => {
