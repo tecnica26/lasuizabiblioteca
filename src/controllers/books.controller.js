@@ -2,14 +2,13 @@ const booksController = {};
 const Book = require('../models/Book');
 // home
 booksController.renderIndex = async (req, res) => {
-
-	let searchResultsArray=[];
+	let searchResultsArray = [];
 	// BUSQUEDA
 	if (req.query.search) {
 		const searchResults = await Book.find({
 			title: { $regex: '.*' + req.query.search + '.*', $options: 'i' },
 		}).lean();
-		searchResultsArray= searchResults;
+		searchResultsArray = searchResults;
 	}
 
 	// RECOMENDADOS
@@ -17,11 +16,10 @@ booksController.renderIndex = async (req, res) => {
 		$and: [{ stars: { $exists: true } }, { stars: { $gte: 3 } }],
 	}).lean();
 
-	
-	res.render('index', { books,searchResultsArray });
+	res.render('index', { books, searchResultsArray });
 };
 
-// 
+//
 booksController.renderSearchResults = (req, res) => {
 	res.send('renderSearchResults');
 };
@@ -32,8 +30,7 @@ booksController.renderMyBooks = (req, res) => {
 
 // estanterias
 booksController.renderShelfs = async (req, res) => {
-	const shelfsArray = await Book.find({shelf:9}).lean();
-	
+	const shelfsArray = await Book.find({ shelf: 9 }).lean();
 	res.render('shelfs', { shelfsArray });
 };
 
