@@ -23,14 +23,15 @@ booksController.renderIndex = async (req, res) => {
 	res.render('index', { books, searchResultsArray, query });
 };
 
-booksController.renderMyBooks = (req, res) => {
-	res.send('mybooks');
-};
-
 // estanterias
 booksController.renderShelfs = async (req, res) => {
-	const shelfsArray = await Book.find({ shelf: 9 }).lean();
+	const shelf = req.query.shelfselect;
+	const shelfsArray = await Book.find({ shelf: shelf }).lean();
 	res.render('shelfs', { shelfsArray });
+};
+
+booksController.renderMyBooks = (req, res) => {
+	res.send('mybooks');
 };
 
 booksController.renderSettings = (req, res) => {
