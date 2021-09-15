@@ -1,5 +1,6 @@
 const booksController = {};
 const Book = require('../models/Book');
+
 // home
 booksController.renderIndex = async (req, res) => {
 	let searchResultsArray = [];
@@ -11,12 +12,13 @@ booksController.renderIndex = async (req, res) => {
 		}).lean();
 		searchResultsArray = searchResults;
 	}
-	console.log(searchResultsArray);
-	console.log(query);
+
 	// RECOMENDADOS
 	const books = await Book.find({
 		$and: [{ stars: { $exists: true } }, { stars: { $gte: 3 } }],
-	}).lean();
+	})
+		.sort({ stars: 1 })
+		.lean();
 
 	res.render('index', { books, searchResultsArray, query });
 };

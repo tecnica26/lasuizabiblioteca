@@ -63,10 +63,6 @@ body {
 	background-color: var(--white-hover);
 }
 /* ------------------------------------------------------ */
-.recbooks-sort-nav {
-	display: flex;
-	justify-content: space-between;
-}
 .recbooks-sort-nav-title {
 	margin-top: 0;
 }
