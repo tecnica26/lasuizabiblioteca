@@ -10,18 +10,13 @@ booksController.renderIndex = async (req, res) => {
 		}).lean();
 		searchResultsArray = searchResults;
 	}
-
+	console.log(searchResultsArray);
 	// RECOMENDADOS
 	const books = await Book.find({
 		$and: [{ stars: { $exists: true } }, { stars: { $gte: 3 } }],
 	}).lean();
 
 	res.render('index', { books, searchResultsArray });
-};
-
-//
-booksController.renderSearchResults = (req, res) => {
-	res.send('renderSearchResults');
 };
 
 booksController.renderMyBooks = (req, res) => {

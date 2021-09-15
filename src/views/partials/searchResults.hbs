@@ -1,24 +1,28 @@
-	    <table border="1px" class="crud-table">
-        <thead>
-            <tr>
-                <th>Titulo</th>
-                <th>Autor</th>
-                <th>Editorial</th>
-                <th>Estante</th>
-                <th>Cantidad</th>
-                <th>🌟</th>
-            </tr>
-        </thead>
-{{#each searchResultsArray}}
-        <tbody>
-            <tr>
-				<td class="template-name"> {{this.title}} </td>
-				<td class="template-artist"> {{this.author}} </td>
-				<td class="template-artist"> {{this.editorial}} </td>
-				<td class="template-artist"> {{this.shelf}} </td>
-				<td class="template-artist"> {{this.quantity}} </td>
-				<td class="template-artist"> {{this.stars}} </td>
+{{#if searchResultsArray}}
+
+	<h3>Resultados de Busqueda</h3>
+	<table border='1px' class='crud-table'>
+		<thead>
+			<tr>
+				<th>Titulo</th>
+				<th>Autor</th>
+				<th>Editorial</th>
+				<th>Estante</th>
+				<th>Cantidad</th>
+				<th>🌟</th>
 			</tr>
-        </tbody>
-{{/each}}
+		</thead>
+		{{#each searchResultsArray}}
+			<tbody>
+				<tr>
+					<td class='template-name'> {{this.title}} </td>
+					<td class='template-artist'> {{this.author}} </td>
+					<td class='template-artist'> {{this.editorial}} </td>
+					<td class='template-artist'> {{this.shelf}} </td>
+					<td class='template-artist'> {{this.quantity}} </td>
+					<td class='template-artist'> {{this.stars}} </td>
+				</tr>
+			</tbody>
+		{{/each}}
 	</table>
+{{/if}}

@@ -3,7 +3,6 @@ const router = express.Router();
 
 const {
 	renderIndex,
-	renderSearchResults,
 	renderMyBooks,
 	renderSettings,
 	renderShelfs,

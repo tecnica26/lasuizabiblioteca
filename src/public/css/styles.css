@@ -1,7 +1,9 @@
 :root {
-	--main-color: #f4f1ea;
+	/* --main-color: #f4f1ea; */
+	--main-color: #669;
 	--secondary-color: #f9f8f4;
-	--font-color: #66594c;
+	/* --font-color: #66594c; */
+	--font-color: #000;
 	--black: #383738;
 	--white: #fff;
 	--white-hover: rgba(255, 255, 255, 0.85);
@@ -19,7 +21,7 @@ body {
 	width: 50%;
 	margin: 0 auto;
 }
-
+/* ------------------------------------------------------ */
 .header {
 	box-shadow: 0 4px 2px -2px gray;
 	height: auto;
