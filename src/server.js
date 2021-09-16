@@ -25,7 +25,7 @@ app.use(passport.session());
 passport.use(
 	new PassportLocal(function (username, password, done) {
 		if (username === 'brandon' && password === 'contra123') {
-			return done(null, { id: 1, name: 'docy' });
+			return done(null, { id: 1, name: 'cody' });
 		}
 		done(null, false);
 	})
@@ -33,8 +33,8 @@ passport.use(
 passport.serializeUser(function (user, done) {
 	done(null, user.id);
 });
-passport.serializeUser(function (id, done) {
-	done(null, user);
+passport.deserializeUser(function (id, done) {
+	done(null, { id: 1, name: 'cody' });
 });
 
 app.set('port', process.env.PORT || 3000);

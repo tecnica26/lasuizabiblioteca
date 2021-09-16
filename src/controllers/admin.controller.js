@@ -13,7 +13,7 @@ adminController.renderAdminLogin = (req, res) => {
 };
 
 adminController.renderAdminLoginPost = passport.authenticate('local', {
-	successRedirect: '/',
+	successRedirect: '/admin',
 	failureRedirect: '/admin/login',
 });
 
