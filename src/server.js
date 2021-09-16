@@ -1,10 +1,16 @@
 const express = require('express');
 const exphbs = require('express-handlebars');
 const path = require('path');
+const passport = require('passport');
+const cookieParser = require('cookie-parser');
+const session = require('express-session');
 // inicializaciones-------------------------
 const app = express();
 
 // configuraciones--------------------------
+// contrasenia,lee datos de form
+app.use(express.urlencoded({ extended: true }));
+
 app.set('port', process.env.PORT || 3000);
 app.set('views', path.join(__dirname, 'views'));
 app.engine(
