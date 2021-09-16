@@ -25,7 +25,7 @@ booksController.renderIndex = async (req, res) => {
 
 // estanterias
 booksController.renderShelfs = async (req, res) => {
-	const shelf = req.query.shelfselect;
+	const shelf = req.query.shelf;
 	const shelfsArray = await Book.find({ shelf: shelf }).lean();
 	res.render('shelfs', { shelfsArray });
 };

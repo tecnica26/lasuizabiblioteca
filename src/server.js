@@ -19,6 +19,7 @@ app.engine(
 app.set('view engine', '.hbs');
 
 // rutas
+app.use(require('./routes/admin.routes'));
 app.use(require('./routes/books.routes'));
 
 // archivos estaticos--------------------------
