@@ -1,21 +1,20 @@
 const adminController = {};
 const Book = require('../models/Book');
-
+const passport = require('passport');
 adminController.renderAdminHome = (req, res) => {
 	// si esta logueado
-	res.render('admin');
-
+	res.send('adminnn login');
 	// si no esta logueado.
 };
 
 adminController.renderAdminLogin = (req, res) => {
 	// formulario
-	res.send('adminnn login');
+	res.render('admin');
 };
 
-adminController.renderAdminLogin = (req, res) => {
-	// recibir datops
-	res.send('adminnn login');
-};
+adminController.renderAdminLoginPost = passport.authenticate('local', {
+	successRedirect: '/',
+	failureRedirect: '/admin/login',
+});
 
 module.exports = adminController;
