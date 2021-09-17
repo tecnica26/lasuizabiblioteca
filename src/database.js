@@ -7,5 +7,3 @@ mongoose
 	})
 	.then((db) => console.log('Conectado a la base de datos'))
 	.catch((err) => console.log(err));
-
-mongoose.set('useCreateIndex', true);
