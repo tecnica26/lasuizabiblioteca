@@ -1,42 +1,7 @@
 <header class='header'>
 	<ul class='navbar-nav ml-auto'>
+	<nav class='header-nav'>
 		{{#if user}}
-			{{! si no lo uso me tira error }}
-			{{user}}
-			<li class='nav-item'>
-				<a class='nav-link' href='/users/logout'>
-					log out
-				</a>
-			</li>
-
-			<li class='nav-item'>
-				<a class='nav-link' href='/notas'>
-					notas
-				</a>
-			</li>
-
-			<li class='nav-item'>
-				<a class='nav-link' href='/notas/add'>
-					agregar notas
-				</a>
-			</li>
-		{{else}}
-			<li class='nav-item'>
-				<a class='nav-link' href='/users/signin'>
-					login
-				</a>
-			</li>
-			<li class='nav-item'>
-				<a class='nav-link' href='/users/signup'>
-					register
-				</a>
-			</li>
-		{{/if}}
-	</ul>
-
-	{{!-- <nav class='header-nav'>
-		{{#if user}}
-
 			<div class='header-right'>
 				<li class='header-link header-link-mybooks'>
 					<a href='/:username/books'>my books</a>
@@ -59,5 +24,5 @@
 				</li>
 			</div>
 		{{/if}}
-	</nav> --}}
+	</nav>
 </header>

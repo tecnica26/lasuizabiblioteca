@@ -2,6 +2,7 @@ const express = require('express');
 const exphbs = require('express-handlebars');
 const path = require('path');
 const passport = require('passport');
+const session = require('express-session');
 // inicializaciones-------------------------
 const app = express();
 require('./config/passport');
@@ -22,6 +23,13 @@ app.set('view engine', '.hbs');
 // middlewares-funciones q se ejecutan a medida que van llegnado peticiones---------------
 // cada vez que llegue datos,q los trate de convertir en json
 app.use(express.urlencoded({ extended: false }));
+app.use(
+	session({
+		secret: 'seceoetroo',
+		resave: true,
+		saveUninitialized: true,
+	})
+);
 app.use(passport.initialize());
 app.use(passport.session());
 
