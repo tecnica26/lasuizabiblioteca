@@ -37,12 +37,36 @@ usersController.signup = async (req, res) => {
 usersController.renderSignInForm = (req, res) => {
 	res.render('users/signin');
 };
-usersController.signin = passport.authenticate('local', {
-	failureRedirect: '/users/signin',
-	successRedirect: '/',
-});
+
+usersController.signin = (req, res, next) => {
+	passport.authenticate('local', function (err, user, info) {
+		if (err) {
+			return next(err);
+		}
+		if (!user) {
+			return res.redirect('/users/signin');
+		}
+		req.logIn(user, function (err) {
+			if (err) {
+				return next(err);
+			}
+			if (user.username === 'admin') {
+				return res.redirect('/users/admin');
+			}
+			return res.redirect('/');
+		});
+	})(req, res, next);
+};
+// usersController.signin = passport.authenticate('local', {
+// 	failureRedirect: '/users/signin',
+// 	successRedirect: '/',
+// });
+
 usersController.logout = (req, res) => {
 	req.logout();
 	res.redirect('/users/signin');
+};
+usersController.admin = (req, res) => {
+	res.send('admin');
 };
 module.exports = usersController;

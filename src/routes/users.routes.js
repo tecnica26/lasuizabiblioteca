@@ -7,6 +7,7 @@ const {
 	renderSignInForm,
 	signin,
 	logout,
+	admin,
 } = require('../controllers/users.controller');
 
 router.get('/users/signup', renderSignUpForm);
@@ -16,5 +17,7 @@ router.get('/users/signin', renderSignInForm);
 router.post('/users/signin', signin);
 
 router.get('/users/logout', logout);
+
+router.get('/users/admin', admin);
 
 module.exports = router;
