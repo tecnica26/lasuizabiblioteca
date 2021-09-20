@@ -1,7 +1,7 @@
 const passport = require('passport');
 const LocalStrategy = require('passport-local').Strategy;
-const AdminModel = require('../models/Admin');
 
+const User = require('../models/User');
 passport.use(
 	new LocalStrategy(
 		{
@@ -10,7 +10,7 @@ passport.use(
 		},
 		async (username, password, done) => {
 			//si existte correo en bdatos
-			const user = await AdminModel.findOne({ username });
+			const user = await User.findOne({ username });
 			console.log(user, 'user encontrado por username q puso usuario');
 			if (!user) {
 				console.log('no encontre a ningyn user', user);
@@ -33,8 +33,9 @@ passport.use(
 passport.serializeUser((user, done) => {
 	done(null, user.id);
 });
+// no entendiXD
 passport.deserializeUser((id, done) => {
-	AdminModel.findById(id, (err, user) => {
+	User.findById(id, (err, user) => {
 		done(err, user);
 	});
 });

@@ -1,10 +1,10 @@
 const express = require('express');
 const exphbs = require('express-handlebars');
 const path = require('path');
-
+const passport = require('passport');
 // inicializaciones-------------------------
 const app = express();
-
+require('./config/passport');
 // configuraciones--------------------------
 app.set('port', process.env.PORT || 3000);
 app.set('views', path.join(__dirname, 'views'));
@@ -22,6 +22,8 @@ app.set('view engine', '.hbs');
 // middlewares-funciones q se ejecutan a medida que van llegnado peticiones---------------
 // cada vez que llegue datos,q los trate de convertir en json
 app.use(express.urlencoded({ extended: false }));
+app.use(passport.initialize());
+app.use(passport.session());
 
 // rutas
 app.use(require('./routes/books.routes'));
