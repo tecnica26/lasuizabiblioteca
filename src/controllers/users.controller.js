@@ -42,6 +42,7 @@ usersController.signin = passport.authenticate('local', {
 	successRedirect: '/',
 });
 usersController.logout = (req, res) => {
-	res.send('users/sioutttttttttt');
+	req.logout();
+	res.redirect('/users/signin');
 };
 module.exports = usersController;
