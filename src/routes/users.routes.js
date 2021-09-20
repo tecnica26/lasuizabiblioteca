@@ -18,6 +18,6 @@ router.post('/users/signin', signin);
 
 router.get('/users/logout', logout);
 
-router.get('/users/admin', admin);
+router.get('/admin', admin);
 
 module.exports = router;
