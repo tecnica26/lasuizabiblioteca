@@ -26,9 +26,8 @@ usersController.signup = async (req, res) => {
 			console.log('encontro un user igual al q pusiste', emailUser);
 			res.redirect('/users/signup');
 		} else {
-			console.log('null?', emailUser);
 			const newUser = await new User({ username, password });
-			console.log(newUser, 'nrew ser');
+			newUser.password = await newUser.encryptPassword(password);
 			await newUser.save();
 			res.redirect('/users/signin');
 		}
