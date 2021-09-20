@@ -25,7 +25,6 @@ usersController.signup = async (req, res) => {
 		// email de bdatos y el q puso user
 		const emailUser = await User.findOne({ username: username });
 		if (emailUser) {
-			console.log('encontro un user igual al q pusiste', emailUser);
 			res.redirect('/users/signup');
 		} else {
 			const newUser = await new User({ username, password });

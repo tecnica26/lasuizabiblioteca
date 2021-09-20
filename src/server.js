@@ -25,6 +25,12 @@ app.use(express.urlencoded({ extended: false }));
 app.use(passport.initialize());
 app.use(passport.session());
 
+// var globales
+app.use((req, res, next) => {
+	res.locals.user = req.user || null;
+	next();
+});
+
 // rutas
 app.use(require('./routes/books.routes'));
 app.use(require('./routes/users.routes'));
