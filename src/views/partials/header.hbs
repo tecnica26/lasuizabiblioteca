@@ -1,33 +1,38 @@
 <header class='header'>
-	<ul class='navbar-nav ml-auto'>
 	<nav class='header-nav'>
-		{{#if user}}
-			<div class='header-right'>
-				<li class='header-link header-link-mybooks'>
-					<a href='/:username/books'>my books</a>
-				</li>
-			</div>
-			<div class='header-right'>
-				<li class='header-link header-link-mybooks'>
-					<a href='/users/logout'>log out</a>
-				</li>
-			</div>
-			
-		{{else}}
-			<div class='header-left'>
-				<li class='header-link'>
-					<a href='/'>home</a>
-				</li>
-				<li class='header-link'>
-					<a href='/estanterias'>estanterias</a>
-				</li>
+		<h1 class='header-logo'>Biblioteca ET26</h1>
+		<div class='header-left'>
+			<li class='header-link header-link-mybooks'>
+				<a href='/:username/books'>my books</a>
+			</li>
+			<li class='header-link'>
+				<a href='/estanterias'>estanterias</a>
+			</li>
+		</div>
+		<div class='header-right'>
+			{{#if user}}
+				<div class='header-pfp-container'>
+					<div class='header-pfp'></div>
+					<span class='header-pfp-down'>👇</span>
+					<li class='header-link header-link-logout none'>
+						<a href='/users/logout'>log out</a>
+					</li>
+				</div>
+			{{else}}
 				<li class='header-link'>
 					<a href='/users/signin'>sigin</a>
 				</li>
 				<li class='header-link'>
 					<a href='/users/signup'>register</a>
 				</li>
-			</div>
-		{{/if}}
+			{{/if}}
+		</div>
 	</nav>
 </header>
+
+<script>
+	const pfpDown=document.querySelector('.header-pfp-down')
+	pfpDown.addEventListener('click',()=>{document.querySelector('.header-link-logout').classList.remove("none")
+	})
+
+</script>
