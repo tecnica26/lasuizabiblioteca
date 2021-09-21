@@ -1,6 +1,6 @@
 const passport = require('passport');
 const LocalStrategy = require('passport-local').Strategy;
-
+const a = 3;
 const User = require('../models/User');
 passport.use(
 	new LocalStrategy(
@@ -16,9 +16,8 @@ passport.use(
 				return done(null, false, { message: 'no hay usuarios' });
 			} else {
 				const match = await user.matchPassword(password, user.password);
-				// console.log('la contrasenia q pone el user es "', password, '"');
 				if (match) {
-					return done(null, user);
+					return done(null, user, a);
 				} else {
 					return done(null, false, { message: 'contra falsa gil' });
 				}

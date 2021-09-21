@@ -27,7 +27,7 @@ body {
 .header {
 	box-shadow: 0 4px 2px -2px rgba(128, 128, 128, 0.1);
 	height: auto;
-	padding: 30px 0;
+	padding: 26px 0;
 }
 .header-logo {
 	margin: 0;
@@ -103,6 +103,15 @@ body {
 .search-results-section {
 	margin-bottom: 50px;
 }
+.search-results-title {
+	margin-bottom: 20px;
+}
+.search-results-title h3 {
+	margin: 0;
+}
+.search-results-title span {
+	color: var(--third-color);
+}
 .search-results-table {
 	border: 1px;
 }
@@ -162,6 +171,7 @@ body {
 	white-space: nowrap;
 	overflow: hidden;
 }
+
 /* ----------------------SHELFFFFFFFFF-------------------------------- */
 .section-title {
 	color: var(--green);
@@ -171,6 +181,24 @@ body {
 .shelf-form button {
 	background: none;
 	border: 1px solid;
+	cursor: pointer;
+}
+/* ----------------------SIGN IN-------------------------------- */
+
+.form-input {
+	border-radius: 5px;
+	padding: 7px 15px;
+	background: none;
+	border: 1px solid #cccccc;
+	margin: 5px 0;
+	color: #a7a6a6;
+}
+.form-input-username {
+	margin-top: 10px;
+}
+.form-input-submit {
+	background-color: #ebe8e2;
+	color: var(--light-green);
 	cursor: pointer;
 }
 /* ------------------------------------------------------ */

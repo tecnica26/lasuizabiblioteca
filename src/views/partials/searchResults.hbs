@@ -1,31 +1,36 @@
 <section class='search-results-section'>
-	{{#if searchResultsArray}}
-		<h3>Resultados de Busqueda</h3>
-		<table class='search-results-table'>
-			<thead class='search-results-thead'>
-				<tr>
-					<th>Titulo</th>
-					<th>Autor</th>
-					<th>Editorial</th>
-					<th>Estante</th>
-					<th>Cantidad</th>
-					<th>🌟</th>
-				</tr>
-			</thead>
-			{{#each searchResultsArray}}
-				<tbody class='search-results-tbody'>
+	{{#if query}}
+		{{#if searchResultsArray}}
+			<div class='search-results-title'>
+				<h3>Resultados de Busqueda</h3>
+				<span>{{searchResultsArray.length}} libros </span>
+			</div>
+			<table class='search-results-table'>
+				<thead class='search-results-thead'>
 					<tr>
-						<td class='template-name'> {{this.title}} </td>
-						<td class='template-artist'> {{this.author}} </td>
-						<td class='template-artist'> {{this.editorial}} </td>
-						<td class='template-artist'> {{this.shelf}} </td>
-						<td class='template-artist'> {{this.quantity}} </td>
-						<td class='template-artist'> {{this.stars}} </td>
+						<th>Titulo</th>
+						<th>Autor</th>
+						<th>Editorial</th>
+						<th>Estante</th>
+						<th>Cantidad</th>
+						<th>🌟</th>
 					</tr>
-				</tbody>
-			{{/each}}
-		</table>
-	{{else}}
-		{{!-- <h3>no se encontraron resultados para "{{query}}"</h3> --}}
+				</thead>
+				{{#each searchResultsArray}}
+					<tbody class='search-results-tbody'>
+						<tr>
+							<td class='template-name'> {{this.title}} </td>
+							<td class='template-artist'> {{this.author}} </td>
+							<td class='template-artist'> {{this.editorial}} </td>
+							<td class='template-artist'> {{this.shelf}} </td>
+							<td class='template-artist'> {{this.quantity}} </td>
+							<td class='template-artist'> {{this.stars}} </td>
+						</tr>
+					</tbody>
+				{{/each}}
+			</table>
+		{{else}}
+			<h3>Resultados de Busqueda: {{query}}</h3>
+		{{/if}}
 	{{/if}}
 </section>
