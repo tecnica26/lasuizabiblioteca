@@ -1,19 +1,29 @@
-<div class='recbooks-section-container'>
+<section>
 	<h3 class='recbooks-sort-nav-title'>Recomendados</h3>
 	<div class='recbooks'>
 		{{#each books}}
 			<article class='recbook-card'>
 				<div class='recbook-img-container'>
-					<img src={{this.imageUrl}} alt='img de lib recs' />
+					<img
+						class='recbook-img'
+						src={{this.imageUrl}}
+						alt='img de lib recs'
+					/>
 				</div>
 				<div class='recbook-body'>
-					<div class='recbook-info'>
-						<p> {{this.title}} </p>
-						<p> {{this.author}} </p>
+
+					<div class='recbook-info-main'>
+						<span title='{{this.title}}' class='recbook-text'>
+							{{this.title}}
+						</span>
+						<span title='{{this.author}}' class='recbook-text'>
+							{{this.author}}
+						</span>
 					</div>
 					<span>Estante {{this.shelf}} </span>
+
 				</div>
 			</article>
 		{{/each}}
 	</div>
-</div>
+</section>
