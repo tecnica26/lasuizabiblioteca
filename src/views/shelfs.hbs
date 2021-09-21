@@ -1,15 +1,13 @@
-<form action='/estanterias' method='GET'>
-	<div>
-		<label for=''>buscar estante</label>
-		<select name='shelf' id=''>
-			<option value='8'>8</option>
-			<option value='9'>9</option>
-			<option value='10'>10</option>
-			<option value='11'>11</option>
-		</select>
-		<input type='submit' value='Buscarrrr' />
-	</div>
-
+<h3 class='section-title'>Estanterias</h3>
+<form class='shelf-form' action='/estanterias' method='GET'>
+	<label for='shelf'>nro.</label>
+	<select id='shelf' name='shelf'>
+		<option value='8'>8</option>
+		<option value='9'>9</option>
+		<option value='10'>10</option>
+		<option value='11'>11</option>
+	</select>
+	<button>Buscar</button>
 </form>
 
 <table border='1px' class='crud-table'>
@@ -24,7 +22,7 @@
 		</tr>
 	</thead>
 	{{#each shelfsArray}}
-		<tbody>
+		<tbody class='search-results-tbody'>
 			<tr>
 				<td class='template-name'> {{this.title}} </td>
 				<td class='template-artist'> {{this.author}} </td>

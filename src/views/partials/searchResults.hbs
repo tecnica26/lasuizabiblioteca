@@ -1,8 +1,8 @@
 <section class='search-results-section'>
 	{{#if searchResultsArray}}
 		<h3>Resultados de Busqueda</h3>
-		<table border='1px' class='crud-table'>
-			<thead>
+		<table class='search-results-table'>
+			<thead class='search-results-thead'>
 				<tr>
 					<th>Titulo</th>
 					<th>Autor</th>
@@ -13,7 +13,7 @@
 				</tr>
 			</thead>
 			{{#each searchResultsArray}}
-				<tbody>
+				<tbody class='search-results-tbody'>
 					<tr>
 						<td class='template-name'> {{this.title}} </td>
 						<td class='template-artist'> {{this.author}} </td>

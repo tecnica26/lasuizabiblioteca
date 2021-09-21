@@ -17,7 +17,7 @@ booksController.renderIndex = async (req, res) => {
 	const books = await Book.find({
 		$and: [{ stars: { $exists: true } }, { stars: { $gte: 3 } }],
 	})
-		.sort({ stars: 1 })
+		.sort({ stars: -1 })
 		.lean();
 
 	res.render('index', { books, searchResultsArray, query });
