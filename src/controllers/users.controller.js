@@ -57,16 +57,12 @@ usersController.signin = (req, res, next) => {
 		});
 	})(req, res, next);
 };
-// usersController.signin = passport.authenticate('local', {
-// 	failureRedirect: '/users/signin',
-// 	successRedirect: '/',
-// });
 
 usersController.logout = (req, res) => {
 	req.logout();
 	res.redirect('/users/signin');
 };
 usersController.admin = (req, res) => {
-	res.send('admin');
+	res.render('admin');
 };
 module.exports = usersController;
