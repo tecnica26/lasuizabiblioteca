@@ -9,6 +9,7 @@ const BookSchema = new Schema(
 		author: { type: String, required: true },
 		editorial: { type: String, required: true },
 		quantity: { type: Number, required: true },
+		imageUrl: { type: String },
 		shelf: { type: Number, required: true },
 		stars: { type: Number, required: false },
 	},

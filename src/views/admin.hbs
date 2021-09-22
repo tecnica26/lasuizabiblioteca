@@ -33,23 +33,22 @@
 		/>
 	</div>
 	<div class='form-group'>
-		<label id='add-info-checkbox' for='info-checkbox'>Info Adicional</label>
-		<input type='checkbox' id='info-checkbox' />
-		<div class='form-group'>
-			<input
-				type='text'
-				disabled='true'
-				class='form-input form-input-add-info'
-				placeholder='ej: Actualmente lo tiene un alumno; Varias editoriales'
-			/>
-			<input
-				type='number'
-				min='0'
-				name='stars'
-				class='form-input form-input-stars'
-				placeholder='⭐'
-			/>
-		</div>
+		{{! <input type="url" name="" id=""> }}
+		<input
+			type='text'
+			class='form-input form-input-add-info'
+			name='imageUrl'
+			placeholder='imgUrl ej: https://google.com/img.jpg'
+		/>
+
+		<input
+			type='number'
+			min='0'
+			name='stars'
+			class='form-input form-input-stars'
+			placeholder='⭐'
+		/>
+
 	</div>
 	<div class='form-group'>
 		<input type='submit' class='form-input form-input-submit' value='Agregar' />
@@ -84,7 +83,9 @@
 		<tbody class='search-results-tbody'>
 			<tr>
 				<td class='template-artist'>
-					<button>Editar</button><button>Eliminar</button>
+					<button data-id='{{this._id}}'>Editar</button><button
+						data-id='{{this._id}}'
+					>Eliminar</button>
 				</td>
 				<td class='template-name'> {{this.title}} </td>
 				<td class='template-artist'> {{this.author}} </td>
@@ -99,10 +100,5 @@
 <hr />
 <p>sos el admin. un gran poder conlleva una gran responsabilidad</p>
 <script>
-
-	const $checkbox=document.getElementById('info-checkbox');
-	$checkbox.addEventListener('change',()=>{ if($checkbox.checked) {
-	document.querySelector('.form-input-add-info').disabled=false} else
-	{document.querySelector('.form-input-add-info').disabled=true} })
 
 </script>

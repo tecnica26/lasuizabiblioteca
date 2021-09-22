@@ -68,13 +68,15 @@ usersController.admin = async (req, res) => {
 	const shelfsArrayAdmin = await Book.find({ shelf: shelf }).lean();
 	// agregar libro
 	try {
-		const { title, author, editorial, shelf, quantity, stars } = req.body;
+		const { title, author, editorial, shelf, quantity, imageUrl, stars } =
+			req.body;
 		const newBook = new Book({
 			title,
 			author,
 			editorial,
 			shelf,
 			quantity,
+			imageUrl,
 			stars,
 		});
 		await newBook.save();
