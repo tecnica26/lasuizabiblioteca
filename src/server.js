@@ -24,6 +24,7 @@ app.set('view engine', '.hbs');
 // middlewares-funciones q se ejecutan a medida que van llegnado peticiones---------------
 // cada vez que llegue datos,q los trate de convertir en json
 app.use(express.urlencoded({ extended: false }));
+app.use(methodOverride('_method'));
 app.use(
 	session({
 		secret: 'seceoetroo',
@@ -33,7 +34,6 @@ app.use(
 );
 app.use(passport.initialize());
 app.use(passport.session());
-app.use(methodOverride('_method'));
 // var globales
 app.use((req, res, next) => {
 	res.locals.user = req.user || null;

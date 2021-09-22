@@ -95,12 +95,22 @@ usersController.bookedit = async (req, res) => {
 	res.render('admin/edit', { libro: libro });
 };
 usersController.updatebook = async (req, res) => {
-	console.log(req.body);
-	res.send('actualizar libroboro');
+	const { title, author, editorial, shelf, quantity, imageUrl, stars } =
+		req.body;
+	await Book.findByIdAndUpdate(req.params.id, {
+		title,
+		author,
+		editorial,
+		shelf,
+		quantity,
+		imageUrl,
+		stars,
+	});
+
+	res.redirect('/admin');
 };
 usersController.deletebook = async (req, res) => {
 	await Book.findByIdAndDelete(req.params.id);
-
 	res.redirect('/estanterias');
 };
 module.exports = usersController;
