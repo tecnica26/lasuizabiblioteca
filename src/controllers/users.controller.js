@@ -62,6 +62,22 @@ usersController.logout = (req, res) => {
 	req.logout();
 	res.redirect('/users/signin');
 };
+usersController.adminedit = async (req, res) => {
+	// editar
+	const { title, author, editorial, quantity, shlef, imageUrl, stars } =
+		req.body;
+	await Book.findByIdAndUpdate(req.params.id, {
+		title,
+		author,
+		editorial,
+		quantity,
+		shlef,
+		imageUrl,
+		stars,
+	});
+
+	res.render('admin');
+};
 usersController.admin = async (req, res) => {
 	// obtener estantes
 	const shelf = req.query.shelf;

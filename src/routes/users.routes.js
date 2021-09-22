@@ -8,6 +8,7 @@ const {
 	signin,
 	logout,
 	admin,
+	// adminedit,
 } = require('../controllers/users.controller');
 const { isAuthenticated } = require('../helpers/auth');
 router.get('/users/signup', renderSignUpForm);
@@ -20,5 +21,6 @@ router.get('/users/logout', isAuthenticated, logout);
 
 router.get('/admin', isAuthenticated, admin);
 router.post('/admin', isAuthenticated, admin);
+// router.put('/admin', isAuthenticated, adminedit);
 
 module.exports = router;
