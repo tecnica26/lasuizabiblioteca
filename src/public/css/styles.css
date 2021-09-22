@@ -207,6 +207,18 @@ body {
 	height: 100px;
 	background-color: var(--secondary-color);
 }
+/* -----------------------ADMINNNNNNNNNNNNNNNNN------------------------------- */
+/* -----------------------ADMINNNNNNNNNNNNNNNNN------------------------------- */
+.form-input-half {
+	width: 99px;
+}
+.form-input-add-info {
+	width: 333px;
+}
+.form-input-stars {
+	width: 70px;
+}
+/* ------------------------------------------------------ */
 /* ------------------------------------------------------ */
 li {
 	list-style: none;
