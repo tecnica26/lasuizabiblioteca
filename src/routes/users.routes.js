@@ -10,6 +10,7 @@ const {
 	admin,
 	bookedit,
 	updatebook,
+	deletebook,
 } = require('../controllers/users.controller');
 const { isAuthenticated } = require('../helpers/auth');
 router.get('/users/signup', renderSignUpForm);
@@ -28,4 +29,5 @@ router.post('/admin', isAuthenticated, admin);
 router.get('/admin/edit/:id', bookedit);
 router.put('/admin/edit/:id', updatebook);
 
+router.delete('/admin/delete/:id', deletebook);
 module.exports = router;

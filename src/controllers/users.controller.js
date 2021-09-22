@@ -98,4 +98,9 @@ usersController.updatebook = async (req, res) => {
 	console.log(req.body);
 	res.send('actualizar libroboro');
 };
+usersController.deletebook = async (req, res) => {
+	await Book.findByIdAndDelete(req.params.id);
+
+	res.redirect('/estanterias');
+};
 module.exports = usersController;

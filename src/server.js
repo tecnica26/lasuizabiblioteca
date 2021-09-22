@@ -3,6 +3,7 @@ const exphbs = require('express-handlebars');
 const path = require('path');
 const passport = require('passport');
 const session = require('express-session');
+const methodOverride = require('method-override');
 // inicializaciones-------------------------
 const app = express();
 require('./config/passport');
@@ -32,7 +33,7 @@ app.use(
 );
 app.use(passport.initialize());
 app.use(passport.session());
-
+app.use(methodOverride('_method'));
 // var globales
 app.use((req, res, next) => {
 	res.locals.user = req.user || null;

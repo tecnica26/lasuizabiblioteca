@@ -95,10 +95,13 @@
 						data-stars='{{this.stars}}'
 						data-id='{{this._id}}'
 					>Editar</a>
-					<button
-						class='book-delete-btn'
-						data-id='{{this._id}}'
-					>Eliminar</button>
+					<form
+						action='/admin/delete/{{this._id}}?_method=DELETE'
+						method='POST'
+					>
+						<input type='hidden' name='_method' value='DELETE' />
+						<button class='book-delete-btn'>Eliminar</button>
+					</form>
 				</td>
 				<td> {{this.title}} </td>
 				<td> {{this.author}} </td>
