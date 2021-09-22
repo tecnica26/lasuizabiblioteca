@@ -1,0 +1,68 @@
+<h3 class='section-title'>EDITAR POR AHORA</h3>
+<form
+	action='/admin/edit/{{libro.id}}?_method=PUT'
+	method='POST'
+	class='admin-form'
+>
+	<input type='hidden' name='method' value='PUT' />
+	<div class='form-group'>
+		<input
+			type='text'
+			class='form-input form-input-title'
+			name='title'
+			value='{{libro.title}}'
+		/>
+		<input
+			type='text'
+			class='form-input'
+			name='author'
+			value='{{libro.author}}'
+		/>
+	</div>
+	<div class='form-group'>
+		<input
+			type='text'
+			class='form-input'
+			name='editorial'
+			placeholder='Editorial'
+			value='{{libro.editorial}}'
+		/>
+		<input
+			type='number'
+			class='form-input form-input-half'
+			name='shelf'
+			min='0'
+			value='{{libro.shelf}}'
+		/>
+		<input
+			type='number'
+			class='form-input form-input-half'
+			name='quantity'
+			min='0'
+			placeholder='Canti.'
+			value='{{libro.quantity}}'
+		/>
+	</div>
+	<div class='form-group'>
+		{{! <input type="url" name="" id=""> }}
+		<input
+			type='text'
+			class='form-input form-input-add-info'
+			name='imageUrl'
+			placeholder='imgUrl ej: https://google.com/img.jpg'
+			value='{{libro.imageUrl}}'
+		/>
+
+		<input
+			type='number'
+			min='0'
+			name='stars'
+			class='form-input form-input-stars'
+			value='{{libro.stars}}'
+		/>
+	</div>
+	<div class='form-group'>
+		<input type='submit' class='form-input form-input-submit' value='Agregar' />
+		<input type='hidden' name='id' />
+	</div>
+</form>

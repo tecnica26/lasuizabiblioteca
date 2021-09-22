@@ -2,6 +2,7 @@ const usersController = {};
 const User = require('../models/User');
 const passport = require('passport');
 const Book = require('../models/Book');
+// signup--------
 usersController.renderSignUpForm = (req, res) => {
 	res.render('users/signup');
 };
@@ -34,10 +35,10 @@ usersController.signup = async (req, res) => {
 		}
 	}
 };
+// signin-------
 usersController.renderSignInForm = (req, res) => {
 	res.render('users/signin');
 };
-
 usersController.signin = (req, res, next) => {
 	passport.authenticate('local', function (err, user, info) {
 		if (err) {
@@ -57,27 +58,12 @@ usersController.signin = (req, res, next) => {
 		});
 	})(req, res, next);
 };
-
+// logout
 usersController.logout = (req, res) => {
 	req.logout();
 	res.redirect('/users/signin');
 };
-usersController.adminedit = async (req, res) => {
-	// editar
-	const { title, author, editorial, quantity, shlef, imageUrl, stars } =
-		req.body;
-	await Book.findByIdAndUpdate(req.params.id, {
-		title,
-		author,
-		editorial,
-		quantity,
-		shlef,
-		imageUrl,
-		stars,
-	});
-
-	res.render('admin');
-};
+// admin
 usersController.admin = async (req, res) => {
 	// obtener estantes
 	const shelf = req.query.shelf;
@@ -101,5 +87,15 @@ usersController.admin = async (req, res) => {
 	}
 
 	res.render('admin', { shelfsArrayAdmin });
+};
+// editar
+usersController.bookedit = async (req, res) => {
+	const libro = await Book.findById(req.params.id).lean();
+	console.log(libro);
+	res.render('admin/edit', { libro: libro });
+};
+usersController.updatebook = async (req, res) => {
+	console.log(req.body);
+	res.send('actualizar libroboro');
 };
 module.exports = usersController;

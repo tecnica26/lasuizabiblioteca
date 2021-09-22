@@ -83,7 +83,8 @@
 		<tbody class='search-results-tbody'>
 			<tr>
 				<td>
-					<button
+					<a
+						href='/admin/edit/{{this._id}}'
 						class='book-edit-btn'
 						data-title='{{this.title}}'
 						data-author='{{this.author}}'
@@ -93,7 +94,8 @@
 						data-imageUrl='{{this.imageUrl}}'
 						data-stars='{{this.stars}}'
 						data-id='{{this._id}}'
-					>Editar</button><button
+					>Editar</a>
+					<button
 						class='book-delete-btn'
 						data-id='{{this._id}}'
 					>Eliminar</button>
@@ -112,13 +114,5 @@
 <p>sos el admin. un gran poder conlleva una gran responsabilidad</p>
 
 <script>
-	const d=document; const $form=document.querySelector('.admin-form'); const
-	$title=document.querySelector('.section-title');
-	d.addEventListener('click',(e)=>{ if(e.target.matches('.book-edit-btn')){
-	$title.textContent = 'Editar Libro'; $form.title.value
-	=e.target.dataset.title; $form.author.value = e.target.dataset.author;
-	$form.editorial.value = e.target.dataset.editorial; $form.shelf.value =
-	e.target.dataset.shelf; $form.quantity.value = e.target.dataset.quantity;
-	$form.imageUrl.value = e.target.dataset.imageUrl; $form.stars.value =
-	e.target.dataset.stars; $form.id.value = e.target.dataset.id; } })
+
 </script>
