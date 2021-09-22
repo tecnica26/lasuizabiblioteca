@@ -1,7 +1,7 @@
 const usersController = {};
 const User = require('../models/User');
 const passport = require('passport');
-
+const Book = require('../models/Book');
 usersController.renderSignUpForm = (req, res) => {
 	res.render('users/signup');
 };
@@ -62,7 +62,26 @@ usersController.logout = (req, res) => {
 	req.logout();
 	res.redirect('/users/signin');
 };
-usersController.admin = (req, res) => {
-	res.render('admin');
+usersController.admin = async (req, res) => {
+	// obtener estantes
+	const shelf = req.query.shelf;
+	const shelfsArrayAdmin = await Book.find({ shelf: shelf }).lean();
+	// agregar libro
+	try {
+		const { title, author, editorial, shelf, quantity, stars } = req.body;
+		const newBook = new Book({
+			title,
+			author,
+			editorial,
+			shelf,
+			quantity,
+			stars,
+		});
+		await newBook.save();
+	} catch (err) {
+		console.log(err);
+	}
+
+	res.render('admin', { shelfsArrayAdmin });
 };
 module.exports = usersController;

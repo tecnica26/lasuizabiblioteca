@@ -30,14 +30,6 @@ booksController.renderShelfs = async (req, res) => {
 	res.render('shelfs', { shelfsArray });
 };
 
-booksController.renderMyBooks = (req, res) => {
-	res.send('mybooks');
-};
-
-booksController.renderSettings = (req, res) => {
-	res.send('settings');
-};
-
 booksController.renderAbout = (req, res) => {
 	res.render('about');
 };

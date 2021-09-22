@@ -19,5 +19,6 @@ router.post('/users/signin', signin);
 router.get('/users/logout', isAuthenticated, logout);
 
 router.get('/admin', isAuthenticated, admin);
+router.post('/admin', isAuthenticated, admin);
 
 module.exports = router;
