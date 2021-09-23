@@ -1,6 +1,5 @@
 <header class='header'>
 	<nav class='header-nav'>
-
 		<h1 class='header-logo'>
 			<a href='/'>Biblioteca ET26</a>
 		</h1>
@@ -16,8 +15,7 @@
 					<div class='header-pfp'></div>
 					<span class='header-pfp-down'>👇</span>
 					<div class='user-dropdown-menu none'>
-						<h5 class='user-dropdown-title'> BRANDON </h5>
-						{{!-- <h5 class='user-dropdown-title'> {{user.username}} </h5> --}}
+						<h5 class='user-dropdown-title'>{{user.username}}</h5>
 						<a href='/user/' class='user-dropdown-a'>Perfil</a>
 						<a href='/:user/books' class='user-dropdown-a'>Mis libros</a>
 						<a href='/:user/settings' class='user-dropdown-a'>Configuracion</a>
@@ -26,6 +24,7 @@
 					</div>
 				</div>
 			{{else}}
+				<p class='user-dropdown-title'> {{this.username}} </p>
 				<li class='header-link header-link-signin'>
 					<a href='/users/signin'>Ingresar</a>
 				</li>
