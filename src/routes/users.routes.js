@@ -26,8 +26,8 @@ router.get('/admin', isAuthenticated, admin);
 router.post('/admin', isAuthenticated, admin);
 
 // editar
-router.get('/admin/edit/:id', bookedit);
-router.put('/admin/book-edit/:id', updatebook);
+router.get('/admin/edit/:id', isAuthenticated, bookedit);
+router.put('/admin/book-edit/:id', isAuthenticated, updatebook);
 
-router.delete('/admin/delete/:id', deletebook);
+router.delete('/admin/delete/:id', isAuthenticated, deletebook);
 module.exports = router;

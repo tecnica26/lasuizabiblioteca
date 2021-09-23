@@ -94,10 +94,15 @@ usersController.admin = async (req, res, next) => {
 	})(req, res, next);
 };
 // editar
-usersController.bookedit = async (req, res) => {
-	const libro = await Book.findById(req.params.id).lean();
-	console.log(libro);
-	res.render('admin/edit', { libro: libro });
+usersController.bookedit = async (req, res, next) => {
+	passport.authenticate('local', async function (err, user, info) {
+		if (req.user.username !== 'admin') {
+			res.redirect('/');
+		} else {
+			const libro = await Book.findById(req.params.id).lean();
+			res.render('admin/edit', { libro: libro });
+		}
+	})(req, res, next);
 };
 usersController.updatebook = async (req, res) => {
 	const { title, author, editorial, shelf, quantity, imageUrl, stars } =
@@ -114,8 +119,14 @@ usersController.updatebook = async (req, res) => {
 
 	res.redirect('/admin');
 };
-usersController.deletebook = async (req, res) => {
-	await Book.findByIdAndDelete(req.params.id);
-	res.redirect('/estanterias');
+usersController.deletebook = async (req, res, next) => {
+	passport.authenticate('local', async function (err, user, info) {
+		if (req.user.username !== 'admin') {
+			res.redirect('/');
+		} else {
+			await Book.findByIdAndDelete(req.params.id);
+			res.redirect('/admin');
+		}
+	})(req, res, next);
 };
 module.exports = usersController;
