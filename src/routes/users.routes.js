@@ -7,10 +7,6 @@ const {
 	renderSignInForm,
 	signin,
 	logout,
-	admin,
-	bookedit,
-	updatebook,
-	deletebook,
 } = require('../controllers/users.controller');
 const { isAuthenticated } = require('../helpers/auth');
 router.get('/users/signup', renderSignUpForm);
@@ -20,14 +16,4 @@ router.get('/users/signin', renderSignInForm);
 router.post('/users/signin', signin);
 
 router.get('/users/logout', isAuthenticated, logout);
-
-// crear
-router.get('/admin', isAuthenticated, admin);
-router.post('/admin', isAuthenticated, admin);
-
-// editar
-router.get('/admin/edit/:id', isAuthenticated, bookedit);
-router.put('/admin/book-edit/:id', isAuthenticated, updatebook);
-
-router.delete('/admin/delete/:id', isAuthenticated, deletebook);
 module.exports = router;
