@@ -64,29 +64,34 @@ usersController.logout = (req, res) => {
 	res.redirect('/users/signin');
 };
 // admin
-usersController.admin = async (req, res) => {
-	// obtener estantes
-	const shelf = req.query.shelf;
-	const shelfsArrayAdmin = await Book.find({ shelf: shelf }).lean();
-	// agregar libro
-	try {
-		const { title, author, editorial, shelf, quantity, imageUrl, stars } =
-			req.body;
-		const newBook = new Book({
-			title,
-			author,
-			editorial,
-			shelf,
-			quantity,
-			imageUrl,
-			stars,
-		});
-		await newBook.save();
-	} catch (err) {
-		console.log(err);
-	}
-
-	res.render('admin', { shelfsArrayAdmin });
+usersController.admin = async (req, res, next) => {
+	passport.authenticate('local', async function (err, user, info) {
+		if (req.user.username !== 'admin') {
+			res.redirect('/');
+		} else {
+			// obtener estantes
+			const shelf = req.query.shelf;
+			const shelfsArrayAdmin = await Book.find({ shelf: shelf }).lean();
+			// agregar libro
+			try {
+				const { title, author, editorial, shelf, quantity, imageUrl, stars } =
+					req.body;
+				const newBook = new Book({
+					title,
+					author,
+					editorial,
+					shelf,
+					quantity,
+					imageUrl,
+					stars,
+				});
+				await newBook.save();
+			} catch (err) {
+				// console.log(err);
+			}
+			res.render('admin', { shelfsArrayAdmin });
+		}
+	})(req, res, next);
 };
 // editar
 usersController.bookedit = async (req, res) => {
