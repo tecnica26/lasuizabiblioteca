@@ -1,4 +1,5 @@
 <section class='search-results-section'>
+
 	{{#if query}}
 		{{#if searchResultsArray}}
 			<div class='search-results-title'>
@@ -32,7 +33,10 @@
 				</table>
 			</div>
 		{{else}}
-			<h3>Resultados de Busqueda: {{query}}</h3>
+			<div class='search-results-title'>
+				<h3>{{query}}</h3>
+				<span>{{searchResultsArray.length}} libros encontrados </span>
+			</div>
 		{{/if}}
 	{{/if}}
 </section>
