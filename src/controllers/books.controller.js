@@ -1,6 +1,6 @@
 const booksController = {};
 const Book = require('../models/Book');
-
+const passport = require('passport');
 // home
 booksController.renderIndex = async (req, res) => {
 	let searchResultsArray = [];
@@ -21,6 +21,14 @@ booksController.renderIndex = async (req, res) => {
 		.lean();
 
 	res.render('index', { books, searchResultsArray, query });
+};
+booksController.likebook = async (req, res, next) => {
+	passport.authenticate('local', async function (err, user, info) {
+		// const book = await Book.findById(req.params.id).lean();
+		const id = req.params.id;
+		await Book.findOneAndUpdate({ _id: id }, { $inc: { stars: 1 } });
+		res.redirect('/');
+	})(req, res, next);
 };
 
 // estanterias

@@ -188,6 +188,15 @@ body {
 	height: 200px;
 	position: relative;
 }
+.recbook-stars {
+	position: absolute;
+	top: 0;
+	right: 0;
+	background-color: var(--white);
+	z-index: 20;
+	display: block;
+	padding: 5px;
+}
 .recbook-img {
 	height: 100%;
 	position: absolute;
@@ -204,7 +213,6 @@ body {
 	padding: 0 5px;
 	border-radius: 0 0 5px 5px;
 }
-
 .recbook-text {
 	display: block;
 	text-overflow: ellipsis;
@@ -212,6 +220,25 @@ body {
 	overflow: hidden;
 }
 
+.recbook-down {
+	display: flex;
+	justify-content: space-between;
+}
+.recbook-like-btn {
+	background: none;
+	border: none;
+}
+.recbook-like {
+	opacity: 0.5;
+}
+.recbook-like:hover {
+	transition: opacity 0.2s;
+	cursor: pointer;
+	opacity: 1;
+}
+.recbook-like.active {
+	opacity: 1;
+}
 /* ----------------------SHELFFFFFFFFF-------------------------------- */
 .section-title {
 	color: var(--green);
