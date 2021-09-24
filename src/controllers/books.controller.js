@@ -1,6 +1,8 @@
 const booksController = {};
 const Book = require('../models/Book');
+const User = require('../models/User');
 const passport = require('passport');
+const { findOne } = require('../models/Book');
 // home
 booksController.renderIndex = async (req, res) => {
 	let searchResultsArray = [];
@@ -24,9 +26,20 @@ booksController.renderIndex = async (req, res) => {
 };
 booksController.likebook = async (req, res, next) => {
 	passport.authenticate('local', async function (err, user, info) {
-		// const book = await Book.findById(req.params.id).lean();
+		if (err) {
+			return next(err);
+		}
+
 		const id = req.params.id;
+		const book = await Book.findById({ _id: id }).lean();
+
+		delete book.stars;
+		delete book.updatedAt;
 		await Book.findOneAndUpdate({ _id: id }, { $inc: { stars: 1 } });
+		await User.findOneAndUpdate(
+			{ _id: req.user._id },
+			{ $addToSet: { likes: book } }
+		);
 		res.redirect('/');
 	})(req, res, next);
 };
