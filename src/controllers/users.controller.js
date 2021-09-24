@@ -1,7 +1,6 @@
 const usersController = {};
 const User = require('../models/User');
 const passport = require('passport');
-const Book = require('../models/Book');
 // signup--------
 usersController.renderSignUpForm = (req, res) => {
 	res.render('users/signup');
@@ -62,6 +61,13 @@ usersController.signin = (req, res, next) => {
 usersController.logout = (req, res) => {
 	req.logout();
 	res.redirect('/users/signin');
+};
+usersController.userProfile = async (req, res) => {
+	const userr = await User.findOne({ username: req.params.user }).lean();
+	res.render('users/profile', { userr });
+};
+usersController.settings = async (req, res) => {
+	res.render('users/settings');
 };
 
 module.exports = usersController;

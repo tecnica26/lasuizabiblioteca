@@ -58,6 +58,9 @@ body {
 	padding: 10px;
 	margin-bottom: 10px;
 }
+.header-right {
+	display: flex;
+}
 .user-dropdown-a {
 	display: block;
 	padding: 10px;
@@ -319,6 +322,57 @@ a.mute {
 	width: 70px;
 }
 /* ------------------------------------------------------ */
+.profile-view {
+	display: flex;
+	align-items: center;
+}
+.profile-info {
+	margin-left: 5px;
+}
+.profile-info span {
+	font-size: 14px;
+}
+.profile-username {
+	margin: 0;
+	font-size: 20px;
+}
+.liked-books-container {
+	padding-top: 50px;
+}
+.liked-books-title,
+.settings-title {
+	margin: 0;
+	font-size: 18px;
+}
+.liked-book-card {
+	display: grid;
+	width: 70%;
+	grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+}
+.liked-book {
+	height: 150px;
+	width: 100px;
+	/* background-color: border; */
+	border: 1px solid;
+}
+.settings-form label {
+	display: block;
+}
+
+.color-input-container {
+	display: flex;
+	align-items: center;
+}
+.color-input-container input[type='color'] {
+	margin-left: 5px;
+	padding: 5px;
+}
+
+.password-settings-container h3 {
+	margin: 0;
+	font-size: 16px;
+	cursor: pointer;
+}
 /* ------------------------------------------------------ */
 li {
 	list-style: none;

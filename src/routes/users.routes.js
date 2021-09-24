@@ -7,6 +7,8 @@ const {
 	renderSignInForm,
 	signin,
 	logout,
+	userProfile,
+	settings,
 } = require('../controllers/users.controller');
 const { isAuthenticated } = require('../helpers/auth');
 router.get('/users/signup', renderSignUpForm);
@@ -16,4 +18,6 @@ router.get('/users/signin', renderSignInForm);
 router.post('/users/signin', signin);
 
 router.get('/users/logout', isAuthenticated, logout);
+router.get('/settings', isAuthenticated, settings);
+router.get('/:user', userProfile);
 module.exports = router;
