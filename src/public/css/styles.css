@@ -229,7 +229,7 @@ body {
 	border: none;
 }
 .recbook-like {
-	opacity: 0.5;
+	opacity: 0.3;
 }
 .recbook-like:hover {
 	transition: opacity 0.2s;
@@ -243,6 +243,7 @@ body {
 .section-title {
 	color: var(--green);
 	margin: 0;
+	margin-bottom: 10px;
 }
 .shelf-form select,
 .shelf-form button {
@@ -251,13 +252,23 @@ body {
 	cursor: pointer;
 }
 /* ----------------------SIGN IN-------------------------------- */
-
+.form-group-container {
+	display: flex;
+}
+.form-group {
+	display: flex;
+	flex-direction: column;
+	margin-right: 5px;
+}
+.form-group label {
+	font-size: 14px;
+}
 .form-input {
 	border-radius: 5px;
 	padding: 7px 15px;
 	background: none;
 	border: 1px solid #cccccc;
-	margin: 5px 0;
+	margin: 2px 0 10px;
 	color: #a7a6a6;
 }
 .form-input-username {
