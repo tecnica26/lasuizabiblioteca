@@ -39,7 +39,7 @@ usersController.bookedit = async (req, res, next) => {
 			res.redirect('/');
 		} else {
 			const libro = await Book.findById(req.params.id).lean();
-			res.render('soyadmin/edit', { libro: libro });
+			res.render('admin/edit', { libro: libro });
 		}
 	})(req, res, next);
 };
@@ -56,7 +56,7 @@ usersController.updatebook = async (req, res) => {
 		stars,
 	});
 
-	res.redirect('/soyadmin');
+	res.redirect('/admin');
 };
 // eliminar
 usersController.deletebook = async (req, res, next) => {
@@ -65,7 +65,7 @@ usersController.deletebook = async (req, res, next) => {
 			res.redirect('/');
 		} else {
 			await Book.findByIdAndDelete(req.params.id);
-			res.redirect('/soyadmin');
+			res.redirect('/admin');
 		}
 	})(req, res, next);
 };

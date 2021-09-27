@@ -51,7 +51,7 @@ usersController.signin = (req, res, next) => {
 				return next(err);
 			}
 			if (user.username === 'admin') {
-				return res.redirect('/soyadmin');
+				return res.redirect('/admin');
 			}
 			return res.redirect('/');
 		});
