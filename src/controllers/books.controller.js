@@ -3,48 +3,25 @@ const Book = require('../models/Book');
 const User = require('../models/User');
 const passport = require('passport');
 // home
-booksController.renderIndex = async (req, res, next) => {
-	passport.authenticate('local', async function (err, user, info) {
-		if (err) {
-			return next(err);
-		}
+booksController.renderIndex = async (req, res) => {
+	let searchResultsArray = [];
+	const query = req.query.search;
+	// BUSQUEDA
+	if (query) {
+		const searchResults = await Book.find({
+			title: { $regex: '.*' + query + '.*', $options: 'i' },
+		}).lean();
+		searchResultsArray = searchResults;
+	}
 
-		let searchResultsArray = [];
-		const query = req.query.search;
-		// BUSQUEDA
-		if (query) {
-			const searchResults = await Book.find({
-				title: { $regex: '.*' + query + '.*', $options: 'i' },
-			}).lean();
-			searchResultsArray = searchResults;
-		}
+	// RECOMENDADOS
+	const books = await Book.find({
+		$and: [{ stars: { $exists: true } }, { stars: { $gte: 3 } }],
+	})
+		.sort({ stars: -1 })
+		.lean();
 
-		// RECOMENDADOS
-		const books = await Book.find({
-			$and: [{ stars: { $exists: true } }, { stars: { $gte: 3 } }],
-		})
-			.sort({ stars: -1 })
-			.lean();
-
-		// const likedBooks = await User.findOne(
-		// 	{ _id: id },
-		// 	{ awards: { $elemMatch: { award: 'Turing Award', year: 1977 } } }
-		// );
-		if (req.user == undefined) {
-			console.log('udnefindiadeed');
-			res.render('index', { books, searchResultsArray, query });
-		} else {
-			// const likedBooks = await User.findOne(
-			// 	{ _id: req.user._id },
-			// 	{
-			// 		likes: { $elemMatch: { author: 'JORGE LUIS BORGES', shelf: 9 } },
-			// 	}
-			// ).lean();
-			const likedBooks = await User.findOne({ _id: req.user._id }).lean();
-			console.log(likedBooks, 'liekdkekd');
-			res.render('index', { books, searchResultsArray, query, likedBooks });
-		}
-	})(req, res, next);
+	res.render('index', { books, searchResultsArray, query });
 };
 booksController.likebook = async (req, res, next) => {
 	passport.authenticate('local', async function (err, user, info) {

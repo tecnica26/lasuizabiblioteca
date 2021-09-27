@@ -1,56 +1,42 @@
 <section>
 	<h3 class='recbooks-sort-nav-title'>Recomendados</h3>
-	{{likedBooks}}
-	{{likedBooks.color}}
-
 	<div class='recbooks'>
 		{{#each books}}
-{{desc}} 
-    		{{#each likedBooks}}
-    		
-		
-
-{{../username}} 
-{{this.title}} 
-
 			<article class='recbook-card'>
 				<div class='recbook-img-container'>
 					<div class='recbook-stars'>
-						<span>{{..this.stars}}⭐</span>
+						<span>{{this.stars}}⭐</span>
 					</div>
 					<img
 						class='recbook-img'
-						src={{..this.imageUrl}}
+						src={{this.imageUrl}}
 						alt='img de lib recs'
 					/>
 				</div>
 				<div class='recbook-body'>
 					<div class='recbook-info-main'>
-						<span title='{{..this.title}}' class='recbook-text'>
-							{{..this.title}}
+						<span title='{{this.title}}' class='recbook-text'>
+							{{this.title}}
 						</span>
-						<span title='{{..this.author}}' class='recbook-text'>
-							{{..this.author}}
+						<span title='{{this.author}}' class='recbook-text'>
+							{{this.author}}
 						</span>
 					</div>
-
 					<div class='recbook-down'>
-						<span>Estante {{..this.shelf}} </span>
-						<form action='/like/{{..this._id}}' method='POST'>
-
+						<span>Estante {{this.shelf}} </span>
+						<form action='/like/{{this._id}}' method='POST'>
 							<button type='subtmit' class='recbook-like-btn'>
 								<span class='recbook-like'>⭐</span>
 							</button>
-
 						</form>
 					</div>
-
 				</div>
 			</article>
-			{{/each}}
+
 		{{/each}}
 	</div>
 </section>
+
 <script>
 	const $starButton=document.querySelector('.recbook-like');
 	$starButton.addEventListener('click',()=>{
