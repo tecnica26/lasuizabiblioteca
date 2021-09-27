@@ -10,12 +10,12 @@ const {
 const { isAuthenticated } = require('../helpers/auth');
 
 // crear
-router.get('/admin', isAuthenticated, admin);
-router.post('/admin', isAuthenticated, admin);
+router.get('/soyadmin', isAuthenticated, admin);
+router.post('/soyadmin', isAuthenticated, admin);
 
 // editar
-router.get('/admin/edit/:id', isAuthenticated, bookedit);
-router.put('/admin/book-edit/:id', isAuthenticated, updatebook);
+router.get('/soyadmin/edit/:id', isAuthenticated, bookedit);
+router.put('/soyadmin/book-edit/:id', isAuthenticated, updatebook);
 
-router.delete('/admin/delete/:id', isAuthenticated, deletebook);
+router.delete('/soyadmin/delete/:id', isAuthenticated, deletebook);
 module.exports = router;

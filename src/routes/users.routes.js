@@ -19,5 +19,5 @@ router.post('/users/signin', signin);
 
 router.get('/users/logout', isAuthenticated, logout);
 router.get('/settings', isAuthenticated, settings);
-router.get('/:user', userProfile);
+router.get('/profile/:user', userProfile);
 module.exports = router;

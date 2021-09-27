@@ -1,5 +1,5 @@
 <h3 class='section-title'>Agregar libro📚</h3>
-<form action='/admin' class='admin-form' method='POST'>
+<form action='/soyadmin' class='admin-form' method='POST'>
 	<div class='form-group'>
 		<input
 			type='text'
@@ -57,7 +57,7 @@
 </form>
 {{! ------------------------------------------------------------------------- }}
 <h3 class='section-title'>Editar, Eliminar</h3>
-<form class='shelf-form' action='/admin' method='GET'>
+<form class='shelf-form' action='/soyadmin' method='GET'>
 	<label for='shelf'>estante</label>
 	<select id='shelf' name='shelf'>
 		<option value='8'>8</option>
@@ -113,9 +113,9 @@
 		<tbody class='search-results-tbody'>
 			<tr>
 				<td>
-					<a href='/admin/edit/{{this._id}}' class='book-edit-btn'>Editar</a>
+					<a href='/soyadmin/edit/{{this._id}}' class='book-edit-btn'>Editar</a>
 					<form
-						action='/admin/delete/{{this._id}}?_method=DELETE'
+						action='/soyadmin/delete/{{this._id}}?_method=DELETE'
 						method='POST'
 					>
 						<input type='hidden' name='_method' value='DELETE' />
@@ -133,8 +133,8 @@
 	{{/each}}
 </table>
 <hr />
-<p>sos el admin. un gran poder conlleva una gran responsabilidad</p>
 
+<p>al salir,cerrar sesion y la pestaña</p>
 <script>
 
 </script>
