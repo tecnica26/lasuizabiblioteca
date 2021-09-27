@@ -98,7 +98,7 @@ body {
 .header-pfp {
 	height: 50px;
 	width: 50px;
-	background-color: var(--green);
+
 	border-radius: 50%;
 	text-align: right;
 }
@@ -166,7 +166,7 @@ body {
 	background-color: #f7f7f7f7;
 }
 .search-results-tbody td {
-	padding: 3px 5px;
+	padding: 5px 4px;
 	text-transform: capitalize;
 }
 /* ------------------------------------------------------ */
@@ -359,6 +359,13 @@ a.mute {
 .form-input-stars {
 	width: 70px;
 }
+.delete-form {
+	margin: 0;
+}
+.delete-form button {
+	cursor: pointer;
+}
+
 /* ------------------------------------------------------ */
 .profile-view {
 	display: flex;

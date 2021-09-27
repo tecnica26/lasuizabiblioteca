@@ -1,5 +1,5 @@
 <div class='profile-view'>
-	<div class='header-pfp'>
+	<div style='background-color: #{{user.color}};' class='header-pfp'>
 	</div>
 	<div class='profile-info'>
 		<h3 class='profile-username'>{{userr.username}}</h3>
@@ -11,10 +11,9 @@
 	<hr />
 	<div class='liked-books'>
 		<div class='liked-book-card'>
-			<div title='' class='liked-book'></div>
-			<div title='' class='liked-book'></div>
-			<div title='' class='liked-book'></div>
-
+			{{#each userr.likes}}
+				<div title='{{this.title}}' class='liked-book'></div>
+			{{/each}}
 		</div>
 	</div>
 </div>

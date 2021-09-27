@@ -7,7 +7,6 @@
 			class='form-input form-input-title'
 			name='title'
 			value='{{var.title}}'
-			placeholder='Universos'
 		/>
 	</div>
 	<div class='form-group'>
@@ -18,7 +17,6 @@
 			class='form-input'
 			name='author'
 			value='{{var.author}}'
-			placeholder='Jorge Luis Borges'
 		/>
 	</div>
 </div>
@@ -47,6 +45,7 @@
 	<div class='form-group'>
 		<label for='input-quantity'>Cant.</label>
 		<input
+			id='input-quantity'
 			type='number'
 			class='form-input form-input-half'
 			name='quantity'
@@ -63,7 +62,6 @@
 			type='text'
 			class='form-input form-input-add-info'
 			name='imageUrl'
-			placeholder='imgUrl ej: https://google.com/img.jpg'
 			value='{{var.imageUrl}}'
 		/>
 	</div>
@@ -80,5 +78,5 @@
 	</div>
 </div>
 <div class='form-group-container'>
-	<input type='submit' class='form-input form-input-submit' value='Agregar' />
+	<input type='submit' class='form-input form-input-submit' value='{{boton}}' />
 </div>

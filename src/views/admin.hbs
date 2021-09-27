@@ -1,73 +1,35 @@
 <h3 class='section-title'>Agregar libro📚</h3>
 <form action='/admin' class='admin-form' method='POST'>
-{{>add-edit var=undefined}}
+{{>add-edit var=undefined boton='Agregar'}}
 </form>
 {{! ------------------------------------------------------------------------- }}
 <h3 class='section-title'>Editar, Eliminar</h3>
 <form class='shelf-form' action='/admin' method='GET'>
 	<label for='shelf'>estante</label>
-	<select id='shelf' name='shelf'>
-		<option value='8'>8</option>
-		<option value='9'>9</option>
-		<option value='10'>10</option>
-		<option value='11'>11</option>
-		<option value='12'>12</option>
-		<option value='13'>13</option>
-		<option value='14'>14</option>
-		<option value='15'>15</option>
-		<option value='16'>16</option>
-		<option value='17'>17</option>
-		<option value='18'>18</option>
-		<option value='19'>19</option>
-		<option value='20'>20</option>
-		<option value='21'>21</option>
-		<option value='22'>22</option>
-		<option value='23'>23</option>
-		<option value='24'>24</option>
-		<option value='25'>25</option>
-		<option value='26'>26</option>
-		<option value='27'>27</option>
-		<option value='52'>52</option>
-		<option value='53'>53</option>
-		<option value='57'>57</option>
-		<option value='66'>66</option>
-		<option value='71'>71/72</option>
-		<option value='76'>76</option>
-		<option value='77'>77</option>
-		<option value='85'>85</option>
-		<option value='87'>87</option>
-		<option value='88'>88</option>
-		<option value='89'>89</option>
-		<option value='90'>90</option>
-
-	</select>
+	{{>shelf-select}}
 	<button>Buscar</button>
 </form>
 
 <table border='1px' class='crud-table'>
 	<thead>
 		<tr>
-			<th>-Acciones-</th>
+			<th>Editar</th>
 			<th>Titulo</th>
 			<th>Autor</th>
 			<th>Editorial</th>
 			<th>Estante</th>
 			<th>Cantidad</th>
 			<th>🌟</th>
+			<th>Eliminar</th>
 		</tr>
 	</thead>
 	{{#each shelfsArrayAdmin}}
 		<tbody class='search-results-tbody'>
 			<tr>
 				<td>
-					<a href='/admin/edit/{{this._id}}' class='book-edit-btn'>Editar</a>
-					<form
-						action='/admin/delete/{{this._id}}?_method=DELETE'
-						method='POST'
-					>
-						<input type='hidden' name='_method' value='DELETE' />
-						<button class='book-delete-btn'>Eliminar</button>
-					</form>
+					<button>
+						<a href='/admin/edit/{{this._id}}'>Editar</a>
+					</button>
 				</td>
 				<td> {{this.title}} </td>
 				<td> {{this.author}} </td>
@@ -75,6 +37,16 @@
 				<td> {{this.shelf}} </td>
 				<td> {{this.quantity}} </td>
 				<td> {{this.stars}} </td>
+				<td> 
+					<form
+						action='/admin/delete/{{this._id}}?_method=DELETE'
+						method='POST'
+						class='delete-form'
+					>
+						<input type='hidden' name='_method' value='DELETE' />
+						<button>Eliminar</button>
+					</form> 
+				</td>
 			</tr>
 		</tbody>
 	{{/each}}

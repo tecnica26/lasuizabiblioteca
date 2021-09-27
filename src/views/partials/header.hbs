@@ -11,11 +11,14 @@
 		<div class='header-right'>
 			{{#if user}}
 				<div class='header-pfp-container'>
-					<div class='header-pfp'></div>
+					<div
+						style='background-color: #{{user.color}};'
+						class='header-pfp'
+					></div>
 					<span class='header-pfp-down'>👇</span>
 					<div class='user-dropdown-menu none'>
 						<h5 class='user-dropdown-title'>{{user.username}}</h5>
-						<a href='/{{user.username}}' class='user-dropdown-a'>Perfil</a>
+						<a href='/p/{{user.username}}' class='user-dropdown-a'>Perfil</a>
 						<a href='/settings' class='user-dropdown-a'>Configuracion</a>
 						<a href='/about' class='user-dropdown-a'>Ayuda</a>
 						<a class='user-dropdown-a' href='/users/logout'>Cerrar Sesion</a>
