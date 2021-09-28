@@ -140,9 +140,13 @@ body {
 .search-results-title {
 	margin-bottom: 20px;
 }
-.search-results-title h3 {
+.query-text {
+	font-weight: bold;
 	margin: 0;
+	font-size: 20px;
+	text-transform: capitalize;
 }
+
 .search-results-title span {
 	color: var(--third-color);
 }
@@ -158,6 +162,7 @@ body {
 	color: var(--white);
 	position: sticky;
 	top: 0;
+	text-align: left;
 }
 .search-results-tbody:nth-child(odd) {
 	background-color: var(--white);
@@ -168,6 +173,9 @@ body {
 .search-results-tbody td {
 	padding: 5px 4px;
 	text-transform: capitalize;
+}
+.search-results-likes-td {
+	display: flex;
 }
 /* ------------------------------------------------------ */
 .recbooks-sort-nav-title {
@@ -223,6 +231,9 @@ body {
 .recbook-down {
 	display: flex;
 	justify-content: space-between;
+}
+.like-form {
+	margin: 0;
 }
 .recbook-like-btn {
 	background: none;

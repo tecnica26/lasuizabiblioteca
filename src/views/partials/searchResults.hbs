@@ -3,7 +3,7 @@
 	{{#if query}}
 		{{#if searchResultsArray}}
 			<div class='search-results-title'>
-				<h3>{{query}}</h3>
+				<p class="query-text">{{query}}</p>
 				<span>{{searchResultsArray.length}} libros </span>
 			</div>
 			<div class='search-results-container'>
@@ -19,22 +19,13 @@
 						</tr>
 					</thead>
 					{{#each searchResultsArray}}
-						<tbody class='search-results-tbody'>
-							<tr>
-								<td class='template-name'> {{this.title}} </td>
-								<td class='template-artist'> {{this.author}} </td>
-								<td class='template-artist'> {{this.editorial}} </td>
-								<td class='template-artist'> {{this.shelf}} </td>
-								<td class='template-artist'> {{this.quantity}} </td>
-								<td class='template-artist'> {{this.stars}} </td>
-							</tr>
-						</tbody>
+						{{>search-results-tbody var=this}}
 					{{/each}}
 				</table>
 			</div>
 		{{else}}
 			<div class='search-results-title'>
-				<h3>{{query}}</h3>
+				<p class="query-text">{{query}}</p>
 				<span>{{searchResultsArray.length}} libros encontrados </span>
 			</div>
 		{{/if}}

@@ -1,0 +1,17 @@
+<tbody class='search-results-tbody'>
+	<tr>
+		<td> {{this.title}} </td>
+		<td> {{this.author}} </td>
+		<td> {{this.editorial}} </td>
+		<td> {{this.shelf}} </td>
+		<td> {{this.quantity}} </td>
+		<td class='search-results-likes-td'>
+			{{this.stars}}
+			<form action='/like/{{this._id}}' method='POST' class='like-form'>
+				<button type='subtmit' class='recbook-like-btn'>
+					<span class='recbook-like'>⭐</span>
+				</button>
+			</form>
+		</td>
+	</tr>
+</tbody>

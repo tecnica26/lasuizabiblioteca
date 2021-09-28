@@ -7,9 +7,14 @@ booksController.renderIndex = async (req, res) => {
 	let searchResultsArray = [];
 	const query = req.query.search;
 	// BUSQUEDA
+
 	if (query) {
 		const searchResults = await Book.find({
-			title: { $regex: '.*' + query + '.*', $options: 'i' },
+			$or: [
+				{ title: { $regex: '.*' + query + '.*', $options: 'i' } },
+				{ author: { $regex: '.*' + query + '.*', $options: 'i' } },
+				{ editorial: { $regex: '.*' + query + '.*', $options: 'i' } },
+			],
 		}).lean();
 		searchResultsArray = searchResults;
 	}

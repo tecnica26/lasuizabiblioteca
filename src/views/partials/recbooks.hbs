@@ -10,7 +10,7 @@
 					<img
 						class='recbook-img'
 						src={{this.imageUrl}}
-						alt='img de lib recs'
+						alt='{{this.title}} image'
 					/>
 				</div>
 				<div class='recbook-body'>
@@ -24,7 +24,7 @@
 					</div>
 					<div class='recbook-down'>
 						<span>Estante {{this.shelf}} </span>
-						<form action='/like/{{this._id}}' method='POST'>
+						<form action='/like/{{this._id}}' class='like-form' method='POST'>
 							<button type='subtmit' class='recbook-like-btn'>
 								<span class='recbook-like'>⭐</span>
 							</button>
