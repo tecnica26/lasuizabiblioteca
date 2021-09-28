@@ -410,7 +410,7 @@ a.mute {
 }
 .color-input-container input[type='color'] {
 	margin-left: 5px;
-	padding: 5px;
+	padding: 2px;
 }
 
 .password-settings-container h3 {

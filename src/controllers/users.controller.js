@@ -57,6 +57,20 @@ usersController.signin = (req, res, next) => {
 		});
 	})(req, res, next);
 };
+
+// settings
+usersController.renderSettings = (req, res) => {
+	res.render('users/settings');
+};
+usersController.settings = async (req, res) => {
+	const { username, color } = req.body;
+	await User.findByIdAndUpdate(req.params.id, {
+		username,
+		color,
+	});
+	res.send('aaaa');
+};
+
 // logout
 usersController.logout = (req, res) => {
 	req.logout();
@@ -65,9 +79,6 @@ usersController.logout = (req, res) => {
 usersController.userProfile = async (req, res) => {
 	const userr = await User.findOne({ username: req.params.user }).lean();
 	res.render('users/profile', { userr });
-};
-usersController.settings = async (req, res) => {
-	res.render('users/settings');
 };
 
 module.exports = usersController;
