@@ -10,6 +10,7 @@ const {
 	userProfile,
 	renderSettings,
 	settings,
+	deleteAccount,
 } = require('../controllers/users.controller');
 const { isAuthenticated } = require('../helpers/auth');
 router.get('/users/signup', renderSignUpForm);
@@ -23,5 +24,6 @@ router.get('/users/logout', isAuthenticated, logout);
 router.get('/settings', isAuthenticated, renderSettings);
 router.post('/settings/:id', isAuthenticated, settings);
 
+router.get('/delete/yes', isAuthenticated, deleteAccount);
 router.get('/p/:user', userProfile);
 module.exports = router;

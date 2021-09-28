@@ -10,7 +10,8 @@
 				id='username'
 				name='username'
 				class='form-input form-input-half'
-				value='{{user.username}}'
+				required='true'
+				placeholder='{{user.username}}'
 			/>
 		</div>
 		<div class='form-group'>
@@ -21,64 +22,23 @@
 					type='text'
 					name='color'
 					class='form-input'
-					value='{{user.color}}'
+					required='true'
+					placeholder='{{user.color}}'
 				/>
 				<input type='color' id='color-input' class='form-input' />
 			</div>
 		</div>
 		<input type='submit' class='form-input form-input-submit' value='Guardar' />
 	</form>
-	<div class='password-settings-container'>
-		<details>
-			<summary><h3>Cambiar contraseña</h3>
-				<hr />
-			</summary>
-			<form action='/settings'>
-				<div class='form-group-container'>
-					<label for='current-password'>Contraseña Actual</label>
-					<div class='color-input-container'>
-						<input
-							type='text'
-							name='current-password'
-							id='current-password'
-							class='form-input'
-						/>
-					</div>
-				</div>
-				<div class='form-group-container'>
-					<label for='new-password'>Nueva Contraseña</label>
-					<div class='color-input-container'>
-						<input
-							type='text'
-							name='current-password'
-							id='new-password'
-							class='form-input'
-						/>
-					</div>
-				</div>
-				<div class='form-group-container'>
-					<label for='confirm-new-password'>Confirmar nueva contraseña</label>
-					<div class='color-input-container'>
-						<input
-							type='text'
-							name='confirm-new-password'
-							id='confirm-new-password'
-							class='form-input'
-						/>
-					</div>
-				</div>
-				<input
-					type='submit'
-					class='form-input form-input-submit'
-					value='Cambiar contraseña'
-				/>
-			</form>
-		</details>
-	</div>
+
+	<button class='delete-account-btn'>eliminar cuenta</button>
 </div>
 
 <script>
 	const $colorTextInput=document.getElementById('color-text-input');
 	document.getElementById('color-input').addEventListener('change',function(){
 	$colorTextInput.value=this.value })
+	document.querySelector('.delete-account-btn').addEventListener('click',()=>{
+	let deleteConfirm=confirm("hola"); if(deleteConfirm){ window.location.href =
+	"/delete/yes"; }else{ console.log('false') } })
 </script>

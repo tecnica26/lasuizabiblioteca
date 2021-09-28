@@ -68,14 +68,19 @@ usersController.settings = async (req, res) => {
 		username,
 		color,
 	});
+
 	res.send('aaaa');
 };
-
+usersController.deleteAccount = async (req, res) => {
+	await User.deleteOne({ _id: req.user._id });
+	res.redirect('/');
+};
 // logout
 usersController.logout = (req, res) => {
 	req.logout();
 	res.redirect('/users/signin');
 };
+
 usersController.userProfile = async (req, res) => {
 	const userr = await User.findOne({ username: req.params.user }).lean();
 	res.render('users/profile', { userr });
