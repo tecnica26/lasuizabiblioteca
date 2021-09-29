@@ -4,7 +4,7 @@
 
 	<form action='/settings/{{user._id}}' method='POST' class='settings-form'>
 		<div class='form-group'>
-			<label for='username'>nombre</label>
+			<label for='username'>Nombre</label>
 			<input
 				type='text'
 				id='username'
@@ -15,7 +15,7 @@
 			/>
 		</div>
 		<div class='form-group'>
-			<label for='color-text-input'>color</label>
+			<label for='color-text-input'>Color</label>
 			<div class='color-input-container'>
 				<input
 					id='color-text-input'
@@ -31,7 +31,7 @@
 		<input type='submit' class='form-input form-input-submit' value='Guardar' />
 	</form>
 
-	<button class='delete-account-btn'>eliminar cuenta</button>
+	<button class='delete-account-btn'>Eliminar cuenta</button>
 </div>
 
 <script>
@@ -39,6 +39,7 @@
 	document.getElementById('color-input').addEventListener('change',function(){
 	$colorTextInput.value=this.value })
 	document.querySelector('.delete-account-btn').addEventListener('click',()=>{
-	let deleteConfirm=confirm("hola"); if(deleteConfirm){ window.location.href =
-	"/delete/yes"; }else{ console.log('false') } })
+	let deleteConfirm=confirm("¿Estas seguro en eliminar tu cuenta?");
+	if(deleteConfirm){ window.location.href = "/delete/yes"; }else{
+	console.log('false') } })
 </script>

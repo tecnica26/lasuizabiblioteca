@@ -402,8 +402,9 @@ a.mute {
 }
 .liked-book-card {
 	display: grid;
-	width: 70%;
+	width: 100%;
 	grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+	gap: 40px;
 }
 .liked-book {
 	height: 150px;
@@ -431,6 +432,9 @@ a.mute {
 	margin: 0;
 	font-size: 16px;
 	cursor: pointer;
+}
+.delete-account-btn {
+	margin-top: 60px;
 }
 /* ------------------------------------------------------ */
 li {
