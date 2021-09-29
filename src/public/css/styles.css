@@ -17,18 +17,17 @@ body {
 	color: var(--rojo);
 	font-family: 'Lato', sans-serif;
 	margin: 0;
-	height: 100%;
-	border: 5px solid red;
+
+	/* border: 5px solid red; */
 }
 
 .container {
-	/* width: 50%;
-	margin: 0 auto; */
-	display: flex;
-	flex-direction: column;
 	/* height: inherit; */
-	height: 100%;
-	border: 3px solid var(--light-green);
+	/* height: 100%; */
+	/* display: flex;
+	flex-direction: column; */
+	/* border: 3px solid var(--light-green); */
+	/* justify-content: space-between; */
 }
 /* ------------------------------------------------------ */
 .header-logo {
@@ -118,10 +117,11 @@ body {
 	width: 50%;
 	margin: 0 auto;
 	padding: 50px 0;
-	/* min-height: 335px; */
-	height: 100%;
+	min-height: 335px;
+	/* height: 100%; */
+	/* min-height: fit-content; */
 	/* height: fit-content; */
-	border: 1px solid blueviolet;
+	/* border: 1px solid blueviolet; */
 }
 .searcher-container {
 	margin-bottom: 50px;
