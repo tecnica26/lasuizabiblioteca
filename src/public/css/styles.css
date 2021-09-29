@@ -17,11 +17,18 @@ body {
 	color: var(--rojo);
 	font-family: 'Lato', sans-serif;
 	margin: 0;
+	height: 100%;
+	border: 5px solid red;
 }
 
 .container {
 	/* width: 50%;
 	margin: 0 auto; */
+	display: flex;
+	flex-direction: column;
+	/* height: inherit; */
+	height: 100%;
+	border: 3px solid var(--light-green);
 }
 /* ------------------------------------------------------ */
 .header-logo {
@@ -111,7 +118,10 @@ body {
 	width: 50%;
 	margin: 0 auto;
 	padding: 50px 0;
-	min-height: 335px;
+	/* min-height: 335px; */
+	height: 100%;
+	/* height: fit-content; */
+	border: 1px solid blueviolet;
 }
 .searcher-container {
 	margin-bottom: 50px;
@@ -178,6 +188,8 @@ body {
 	display: flex;
 }
 /* ------------------------------------------------------ */
+.recbooks-section {
+}
 .recbooks-sort-nav-title {
 	margin-top: 0;
 }
@@ -435,6 +447,62 @@ a.mute {
 }
 .delete-account-btn {
 	margin-top: 60px;
+}
+/* ------------------------------------------------------ */
+@media screen and (max-width: 700px) {
+	.header-nav {
+		width: 90%;
+	}
+	.content-container {
+		width: 90%;
+	}
+	.recbooks {
+		overflow: hidden scroll;
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
+	}
+	.recbook-card {
+		width: 160px;
+		margin-bottom: 30px;
+		margin-right: 0;
+	}
+	.footer-container {
+		width: 90%;
+	}
+}
+@media screen and (max-width: 600px) {
+	.header-nav {
+		width: 95%;
+	}
+	.header-nav {
+		flex-wrap: wrap;
+		/* padding-left: 5px; */
+	}
+	.header-left {
+		display: block;
+		width: 100%;
+		margin-top: 15px;
+	}
+	.header-right {
+		display: block;
+		width: 100%;
+		margin-top: 15px;
+	}
+	.header-link {
+		margin-left: 0;
+	}
+	.content-container {
+		width: 95%;
+	}
+
+	.recbook-card {
+		width: 140px;
+		margin-bottom: 15px;
+	}
+	.footer-container {
+		width: 95%;
+	}
 }
 /* ------------------------------------------------------ */
 li {
