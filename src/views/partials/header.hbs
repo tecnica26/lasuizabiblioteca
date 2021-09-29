@@ -39,8 +39,10 @@
 </header>
 
 <script>
-	const pfpDown=document.querySelector('.header-pfp-down')
-	pfpDown.addEventListener('click',()=>{document.querySelector('.user-dropdown-menu').classList.toggle("none")
-	})
-
+	const $pfpDown=document.querySelector('.header-pfp-down')
+	document.addEventListener('click',(e)=>{ if(e.target===$pfpDown){
+	document.querySelector('.user-dropdown-menu').classList.toggle("none") }else
+	if( !e.target.matches('.user-dropdown-menu *') &&
+	!e.target.matches('.user-dropdown-menu') ){
+	document.querySelector('.user-dropdown-menu').classList.add("none") } })
 </script>

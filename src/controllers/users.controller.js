@@ -86,5 +86,8 @@ usersController.userProfile = async (req, res) => {
 	const userr = await User.findOne({ username: req.params.user }).lean();
 	res.render('users/profile', { userr });
 };
+usersController.noPlace = async (req, res) => {
+	res.render('404');
+};
 
 module.exports = usersController;

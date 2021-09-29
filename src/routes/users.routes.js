@@ -11,6 +11,7 @@ const {
 	renderSettings,
 	settings,
 	deleteAccount,
+	noPlace,
 } = require('../controllers/users.controller');
 const { isAuthenticated } = require('../helpers/auth');
 router.get('/users/signup', renderSignUpForm);
@@ -26,4 +27,5 @@ router.post('/settings/:id', isAuthenticated, settings);
 
 router.get('/delete/yes', isAuthenticated, deleteAccount);
 router.get('/p/:user', userProfile);
+
 module.exports = router;
