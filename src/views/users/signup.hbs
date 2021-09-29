@@ -4,6 +4,7 @@
 		<input
 			autofocus='true'
 			type='text'
+			id='signup-username-input'
 			class='form-input form-input-username'
 			name='username'
 			placeholder='Username'
@@ -15,6 +16,7 @@
 			type='password'
 			class='form-input'
 			name='password'
+			autocomplete='on'
 			placeholder='Crea una contraseña'
 		/>
 	</div>
@@ -23,6 +25,7 @@
 			type='password'
 			class='form-input'
 			name='confirm_password'
+			autocomplete='false'
 			placeholder='Confirma Contraseña'
 		/>
 	</div>
@@ -37,3 +40,9 @@
 <small>¿Ya tienes una cuenta?
 	<a class='mute' href='/users/signup'>Ingresa</a>
 </small>
+<script>
+	const $signUpUsernameInput=document.getElementById('signup-username-input');
+	document.addEventListener('change',(e)=>{
+	if(e.target.matches('#signup-username-input')){
+	console.log($signUpUsernameInput.value.toLowerCase()) } })
+</script>

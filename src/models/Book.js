@@ -11,7 +11,7 @@ const BookSchema = new Schema(
 		quantity: { type: Number, required: true, default: 0 },
 		imageUrl: { type: String, required: false },
 		shelf: { type: Number, required: true },
-		stars: { type: Number, required: false },
+		stars: { type: Number, required: false, min: 0 },
 	},
 	{
 		collection: 'books',

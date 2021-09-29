@@ -24,6 +24,7 @@ usersController.signup = async (req, res) => {
 	} else {
 		// email de bdatos y el q puso user
 		const emailUser = await User.findOne({ username: username });
+
 		if (emailUser) {
 			res.redirect('/users/signup');
 		} else {
