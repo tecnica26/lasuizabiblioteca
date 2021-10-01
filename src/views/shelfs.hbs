@@ -5,18 +5,20 @@
 	<button>Buscar</button>
 </form>
 
-<table class='search-results-table'>
-	<thead class='search-results-thead'>
-		<tr>
-			<th>Titulo</th>
-			<th>Autor</th>
-			<th>Editorial</th>
-			<th>Estante</th>
-			<th>Cantidad</th>
-			<th>🌟</th>
-		</tr>
-	</thead>
-	{{#each shelfsArray}}
-		{{>search-results-tbody var=this}}
-	{{/each}}
-</table>
+<div class="search-results-container">
+	<table class='search-results-table'>
+		<thead class='search-results-thead'>
+			<tr>
+				<th>Titulo</th>
+				<th>Autor</th>
+				<th>Editorial</th>
+				<th>Estante</th>
+				<th>Cantidad</th>
+				<th>🌟</th>
+			</tr>
+		</thead>
+		{{#each shelfsArray}}
+			{{>search-results-tbody var=this}}
+		{{/each}}
+	</table>
+</div>
