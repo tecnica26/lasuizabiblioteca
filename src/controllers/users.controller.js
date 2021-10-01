@@ -64,13 +64,14 @@ usersController.renderSettings = (req, res) => {
 	res.render('users/settings');
 };
 usersController.settings = async (req, res) => {
-	const { username, color } = req.body;
+	const username = req.body.username || req.user.username;
+	const color = req.body.color || req.user.color;
+	// const { username, color } = req.body;
 	await User.findByIdAndUpdate(req.params.id, {
 		username,
 		color,
 	});
-
-	res.send('aaaa');
+	res.redirect('/p/' + req.user.username);
 };
 usersController.deleteAccount = async (req, res) => {
 	await User.deleteOne({ _id: req.user._id });

@@ -10,22 +10,13 @@
 				id='username'
 				name='username'
 				class='form-input form-input-half'
-				required='true'
 				placeholder='{{user.username}}'
 			/>
 		</div>
 		<div class='form-group'>
-			<label for='color-text-input'>Color</label>
+			<label for='color-input'>Color</label>
 			<div class='color-input-container'>
-				<input
-					id='color-text-input'
-					type='text'
-					name='color'
-					class='form-input'
-					required='true'
-					placeholder='{{user.color}}'
-				/>
-				<input type='color' id='color-input' class='form-input' />
+				<input type='color' name='color' id='color-input' class='form-input' />
 			</div>
 		</div>
 		<input type='submit' class='form-input form-input-submit' value='Guardar' />
@@ -35,9 +26,7 @@
 </div>
 
 <script>
-	const $colorTextInput=document.getElementById('color-text-input');
-	document.getElementById('color-input').addEventListener('change',function(){
-	$colorTextInput.value=this.value })
+
 	document.querySelector('.delete-account-btn').addEventListener('click',()=>{
 	let deleteConfirm=confirm("¿Estas seguro en eliminar tu cuenta?");
 	if(deleteConfirm){ window.location.href = "/delete/yes"; }else{

@@ -10,7 +10,7 @@ const UserSchema = new Schema(
 			trim: true,
 		},
 		password: String,
-		color: { type: String, default: '00635d', trim: true },
+		color: { type: String, default: '#00635d', trim: true },
 		likes: { type: [] },
 	},
 	{

@@ -78,7 +78,7 @@ body {
 	border-radius: 5px;
 }
 .user-dropdown-a:hover {
-	background-color: var(--third-color);
+	background-color: var(--secondary-color);
 }
 .header-link {
 	font-size: 18px;
@@ -121,7 +121,10 @@ body {
 	width: 50%;
 	margin: 0 auto;
 	padding: 50px 0;
-	height: 100%;
+	flex-grow: 1;
+	/* min-height: 335px;
+	max-height: 100%; */
+	/* height: 100%; */
 	/* min-height: 335px; */
 	/* height: 100%; */
 	/* min-height: fit-content; */
@@ -297,7 +300,10 @@ body {
 	background: none;
 	border: 1px solid #cccccc;
 	margin: 2px 0 10px;
-	color: #a7a6a6;
+	color: var(--black);
+}
+.form-input::placeholder {
+	color: rgba(151, 151, 151, 0.76);
 }
 .form-input-username {
 	margin-top: 10px;
@@ -309,7 +315,7 @@ body {
 }
 /* ------------------------------------------------------ */
 .footer {
-	padding: 20px 5px 30px;
+	padding: 20px 5px;
 	background-color: var(--secondary-color);
 	display: flex;
 	justify-content: center;
@@ -441,7 +447,6 @@ a.mute {
 	align-items: center;
 }
 .color-input-container input[type='color'] {
-	margin-left: 5px;
 	padding: 2px;
 }
 
@@ -457,6 +462,10 @@ a.mute {
 @media screen and (max-width: 700px) {
 	.header-nav {
 		width: 90%;
+	}
+	.user-dropdown-menu {
+		top: 135px;
+		left: 0;
 	}
 	.content-container {
 		width: 90%;
@@ -503,7 +512,7 @@ a.mute {
 
 	.recbook-card {
 		width: 140px;
-		margin-bottom: 15px;
+		margin-bottom: 30px;
 	}
 	.footer-container {
 		width: 95%;

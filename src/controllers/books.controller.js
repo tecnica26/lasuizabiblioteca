@@ -13,7 +13,6 @@ booksController.renderIndex = async (req, res) => {
 			$or: [
 				{ title: { $regex: '.*' + query + '.*', $options: 'i' } },
 				{ author: { $regex: '.*' + query + '.*', $options: 'i' } },
-				{ editorial: { $regex: '.*' + query + '.*', $options: 'i' } },
 			],
 		}).lean();
 		searchResultsArray = searchResults;
