@@ -8,10 +8,14 @@ const BookSchema = new Schema(
 		},
 		author: { type: String, required: true },
 		editorial: { type: String, required: true },
-		quantity: { type: Number, required: true, default: 0 },
+		quantity: {
+			type: Number,
+			default: 1,
+			min: 0,
+		},
 		imageUrl: { type: String, required: false },
 		shelf: { type: Number, required: true },
-		stars: { type: Number, required: false, min: 0 },
+		stars: { type: Number, required: false, min: 0, default: 1 },
 	},
 	{
 		collection: 'books',

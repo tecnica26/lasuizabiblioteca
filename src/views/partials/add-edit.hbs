@@ -49,14 +49,23 @@
 	</div>
 	<div class='form-group'>
 		<label for='input-quantity'>Cant.</label>
-		<input
-			id='input-quantity'
-			type='number'
-			class='form-input form-input-half'
-			name='quantity'
-			min='0'
-			value='{{var.quantity}}'
-		/>
+		{{#if var.quantity}}
+			<input
+				id='input-quantity'
+				type='number'
+				class='form-input form-input-half'
+				name='quantity'
+				min='0'
+				value='{{var.quantity}}'
+			/>
+		{{else}}
+			<input
+				id='input-quantity'
+				type='number'
+				class='form-input form-input-half'
+				name='quantity'
+			/>
+		{{/if}}
 	</div>
 </div>
 <div class='form-group-container'>

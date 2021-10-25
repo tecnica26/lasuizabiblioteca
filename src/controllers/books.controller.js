@@ -50,7 +50,7 @@ booksController.likebook = async (req, res, next) => {
 booksController.renderShelfs = async (req, res) => {
 	const shelf = req.query.shelf;
 	const shelfsArray = await Book.find({ shelf: shelf }).lean();
-	res.render('shelfs', { shelfsArray });
+	res.render('shelfs', { shelfsArray, shelf });
 };
 
 booksController.renderAbout = (req, res) => {

@@ -28,7 +28,7 @@ usersController.admin = async (req, res, next) => {
 			} catch (err) {
 				// console.log(err);
 			}
-			res.render('admin', { shelfsArrayAdmin });
+			res.render('admin', { shelfsArrayAdmin, shelf });
 		}
 	})(req, res, next);
 };
