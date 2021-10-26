@@ -1,15 +1,14 @@
 :root {
 	--main-color: #f4f1ea;
-	/* --main-color: #669; */
 	--secondary-color: #f9f8f4;
-	/* --font-color: #66594c; */
-	--font-color: #000;
+	--font-color: #66594c;
 	--black: #383738;
 	--white: #fff;
 	--light-green: #1e756f;
 	--green: #00635d;
 	--white-hover: rgba(255, 255, 255, 0.85);
 	--third-color: #979797;
+	--page-width: 55%;
 }
 
 body {
@@ -50,7 +49,7 @@ body {
 	justify-content: space-between;
 	align-items: center;
 	position: relative;
-	width: 50%;
+	width: var(--page-width);
 }
 .user-dropdown-menu {
 	position: absolute;
@@ -90,7 +89,10 @@ body {
 }
 .header-link-signin {
 	border: 1px solid var(--black);
-	color: var(--third-color);
+	color: var(--font-color);
+}
+.header-link-signin:hover {
+	background-color: rgb(255, 255, 255, 0.4);
 }
 .header-link-signin,
 .header-link-signup {
@@ -108,7 +110,6 @@ body {
 .header-pfp {
 	height: 50px;
 	width: 50px;
-
 	border-radius: 50%;
 	text-align: right;
 }
@@ -118,15 +119,10 @@ body {
 }
 /* ------------------------------------------------------ */
 .content-container {
-	width: 50%;
+	width: var(--page-width);
 	margin: 0 auto;
 	padding: 50px 0;
 	flex-grow: 1;
-	/* min-height: 335px; */
-	/* height: 100%; */
-	/* min-height: fit-content; */
-	/* height: fit-content; */
-	/* border: 1px solid blueviolet; */
 }
 .searcher-container {
 	margin-bottom: 50px;
@@ -193,8 +189,6 @@ body {
 	display: flex;
 }
 /* ------------------------------------------------------ */
-.recbooks-section {
-}
 .recbooks-sort-nav-title {
 	margin-top: 0;
 }
@@ -267,11 +261,11 @@ body {
 .recbook-like.active {
 	opacity: 1;
 }
-/* ----------------------SHELFFFFFFFFF-------------------------------- */
+/* ----------------------SHELFFFFFFFFF-estanterias-------------------------------- */
 .section-title {
 	color: var(--green);
 	margin: 0;
-	margin-bottom: 10px;
+	margin-bottom: 20px;
 }
 .shelf-form select,
 .shelf-form button {
@@ -279,7 +273,38 @@ body {
 	border: 1px solid;
 	cursor: pointer;
 }
+/* ----------------------books TODOS LOS LIBROS-------------------------------- */
+.all-books-container {
+	width: 100%;
+	display: grid;
+}
+
+/* ----------------------SIGN up-------------------------------- */
+.sign-up-img {
+	background: url('https://www.telam.com.ar/advf/imagenes/2020/09/5f63384895f9e_800x450.jpg');
+}
 /* ----------------------SIGN IN-------------------------------- */
+.sign-container {
+	/* border: 1px solid; */
+	display: flex;
+	height: 100%;
+	text-align: center;
+	justify-content: space-between;
+}
+.sign-in-img {
+	/* background: url('https://www.acescritores.com/wp-content/uploads/PN27C3F1_1.jpg'); */
+	background: url('https://st4.depositphotos.com/13112752/28124/i/1600/depositphotos_281241500-stock-photo-teenage-girl-choosing-books-library.jpg');
+}
+.sign-hero {
+	width: 60%;
+	/* border: 5px solid var(--light-green); */
+	opacity: 0.8;
+	background-position: center;
+	background-size: cover;
+	background-repeat: no-repeat;
+
+	border-radius: 10px;
+}
 .form-group-container {
 	display: flex;
 }
@@ -298,6 +323,9 @@ body {
 	border: 1px solid #cccccc;
 	margin: 2px 0 10px;
 	color: var(--black);
+
+	height: 40px;
+	width: 240px;
 }
 .form-input::placeholder {
 	color: rgba(151, 151, 151, 0.76);
@@ -306,9 +334,14 @@ body {
 	margin-top: 10px;
 }
 .form-input-submit {
-	background-color: #ebe8e2;
-	color: var(--light-green);
+	background-color: var(--light-green);
+	color: var(--white);
 	cursor: pointer;
+	font-size: 16px;
+}
+.form-input-submit:hover,
+.header-link-signup:hover {
+	background-color: var(--green);
 }
 /* ------------------------------------------------------ */
 .footer {
@@ -316,13 +349,14 @@ body {
 	background-color: var(--secondary-color);
 	display: flex;
 	justify-content: center;
+	border-top: 1px solid rgba(204, 204, 204, 0.5);
 }
 .footer-container {
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: space-between;
 	align-items: center;
-	width: 50%;
+	width: var(--page-width);
 }
 .footer-nav {
 	font-weight: bold;
@@ -376,7 +410,7 @@ body {
 	line-height: 1.5;
 }
 a.mute {
-	border-bottom: 1px solid #456;
+	border-bottom: 1px solid #89a;
 	color: #89a;
 }
 /* -----------------------ADMINNNNNNNNNNNNNNNNN------------------------------- */
@@ -534,4 +568,8 @@ img {
 }
 .none {
 	display: none;
+}
+small {
+	display: block;
+	text-align: left;
 }

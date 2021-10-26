@@ -6,6 +6,7 @@ const {
 	renderShelfs,
 	renderAbout,
 	likebook,
+	renderAllBooks,
 } = require('../controllers/books.controller');
 const { isAuthenticated } = require('../helpers/auth');
 
@@ -18,5 +19,8 @@ router.get('/about', renderAbout);
 
 // estanterias
 router.get('/estanterias', renderShelfs);
+
+// estanterias
+router.get('/todo', renderAllBooks);
 
 module.exports = router;

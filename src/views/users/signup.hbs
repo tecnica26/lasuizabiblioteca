@@ -1,45 +1,51 @@
-<h2 class='section-title'>Crea Una Cuenta</h2>
-<form action='/users/signup' method='POST'>
-	<div class='form-group-container'>
-		<input
-			autofocus='true'
-			type='text'
-			id='signup-username-input'
-			class='form-input form-input-username'
-			name='username'
-			placeholder='Username'
-			value='{{username}}'
-		/>
+<div class='sign-container'>
+	<div>
+		<h2 class='section-title'>Crea Una Cuenta</h2>
+		<form action='/users/signup' method='POST'>
+			<div class='form-group-container'>
+				<input
+					autofocus='true'
+					type='text'
+					id='signup-username-input'
+					class='form-input form-input-username'
+					name='username'
+					placeholder='Username'
+					value='{{username}}'
+				/>
+			</div>
+			<div class='form-group-container'>
+				<input
+					type='password'
+					class='form-input'
+					name='password'
+					autocomplete='on'
+					placeholder='Crea una contraseña'
+				/>
+			</div>
+			<div class='form-group-container'>
+				<input
+					type='password'
+					class='form-input'
+					name='confirm_password'
+					autocomplete='false'
+					placeholder='Confirma Contraseña'
+				/>
+			</div>
+			<div class='form-group-container'>
+				<input
+					type='submit'
+					class='form-input form-input-submit'
+					value='Registrar'
+				/>
+			</div>
+		</form>
+		<small>¿Ya tienes una cuenta?<a
+				class='mute'
+				href='/users/signup'
+			>Ingresa</a></small>
 	</div>
-	<div class='form-group-container'>
-		<input
-			type='password'
-			class='form-input'
-			name='password'
-			autocomplete='on'
-			placeholder='Crea una contraseña'
-		/>
-	</div>
-	<div class='form-group-container'>
-		<input
-			type='password'
-			class='form-input'
-			name='confirm_password'
-			autocomplete='false'
-			placeholder='Confirma Contraseña'
-		/>
-	</div>
-	<div class='form-group-container'>
-		<input
-			type='submit'
-			class='form-input form-input-submit'
-			value='Registrar'
-		/>
-	</div>
-</form>
-<small>¿Ya tienes una cuenta?
-	<a class='mute' href='/users/signup'>Ingresa</a>
-</small>
+	<div class='sign-hero sign-up-img'></div>
+</div>
 <script>
 	const $signUpUsernameInput=document.getElementById('signup-username-input');
 	document.addEventListener('change',(e)=>{

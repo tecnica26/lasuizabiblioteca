@@ -56,5 +56,10 @@ booksController.renderShelfs = async (req, res) => {
 booksController.renderAbout = (req, res) => {
 	res.render('about');
 };
+booksController.renderAllBooks = async (req, res) => {
+	const allbooks = await Book.find().lean();
+	// console.log(allbooks);
+	res.render('books', { allbooks });
+};
 
 module.exports = booksController;
