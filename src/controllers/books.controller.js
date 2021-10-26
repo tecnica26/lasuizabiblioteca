@@ -57,8 +57,7 @@ booksController.renderAbout = (req, res) => {
 	res.render('about');
 };
 booksController.renderAllBooks = async (req, res) => {
-	const allbooks = await Book.find().lean();
-	// console.log(allbooks);
+	const allbooks = await Book.find().sort({ title: 1 }).lean();
 	res.render('books', { allbooks });
 };
 

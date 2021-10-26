@@ -1,35 +1,17 @@
 <h3 class='section-title'>Todos los Libros</h3>
 <hr />
-<div class='liked-books-container'>
-	<div class='liked-books'>
-		<div class='liked-book-card'>
-			{{#each allbooks}}
-				<div>
-					<div
-						title='{{this.title}}'
-						style="background-image: url('{{this.imageUrl}}');"
-						class='liked-book'
-					></div>
-					<small>{{this.title}}</small>
-				</div>
-			{{/each}}
-		</div>
+
+<div class='allbooks-container'>
+	<div class='liked-book-card'>
+		{{#each allbooks}}
+			<div>
+				<div
+					title='{{this.author}}'
+					style="background-image: url('{{this.imageUrl}}');"
+					class='liked-book'
+				></div>
+				<small>{{this.title}}</small>
+			</div>
+		{{/each}}
 	</div>
 </div>
-
-{{! $likedBook.forEach(el=>{ 
-		if(el.style.backgroundImage ==='url("")'){
-			el.style.BackgroundColor='#f333f3' 
-		} 
-	}); }}
-<script>
-
-	const setBg = () => { const randomColor =
-	Math.floor(Math.random()*16777215).toString(16); const color = "#" +
-	randomColor; return color; }; const
-	$likedBook=document.querySelectorAll('.liked-book'); $likedBook.forEach(el=>{
-	if(el.style.backgroundImage
-	==="url((unknown))"||el.style.backgroundColor==''){
-	el.style.backgroundColor=setBg(); } });
-
-</script>

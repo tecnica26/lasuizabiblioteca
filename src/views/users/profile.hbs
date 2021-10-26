@@ -7,6 +7,7 @@
 			<span>{{userr.color}}</span>
 		</div>
 	</div>
+
 	<div id='books' class='liked-books-container'>
 		<h4 class='liked-books-title'>Me gusta</h4>
 		<hr />
@@ -14,11 +15,14 @@
 			<div class='liked-book-card'>
 				{{#if userr.likes}}
 					{{#each userr.likes}}
-						<div
-							title='{{this.title}}'
-							style="background-image: url('{{this.imageUrl}}');"
-							class='liked-book'
-						></div>
+						<div>
+							<div
+								title='{{this.title}}'
+								style="background-image: url('{{this.imageUrl}}');"
+								class='liked-book'
+							></div>
+							<small>{{this.title}}</small>
+						</div>
 					{{/each}}
 				{{else}}
 					No likes No party
@@ -26,6 +30,7 @@
 			</div>
 		</div>
 	</div>
+
 {{else}}
 	No hay users rey
 {{/if}}

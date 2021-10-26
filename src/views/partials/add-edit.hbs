@@ -64,6 +64,7 @@
 				type='number'
 				class='form-input form-input-half'
 				name='quantity'
+				value='1'
 			/>
 		{{/if}}
 	</div>
@@ -81,14 +82,25 @@
 	</div>
 	<div class='form-group form-editorial'>
 		<label for='input-likes'>Likes</label>
-		<input
-			id='input-likes'
-			type='number'
-			min='0'
-			name='stars'
-			class='form-input form-input-stars'
-			value='{{var.stars}}'
-		/>
+		{{#if var.stars}}
+			<input
+				id='input-likes'
+				type='number'
+				min='0'
+				name='stars'
+				class='form-input form-input-stars'
+				value='{{var.stars}}'
+			/>
+		{{else}}
+			<input
+				id='input-likes'
+				type='number'
+				min='0'
+				name='stars'
+				class='form-input form-input-stars'
+				value='0'
+			/>
+		{{/if}}
 	</div>
 </div>
 <div class='form-group-container'>

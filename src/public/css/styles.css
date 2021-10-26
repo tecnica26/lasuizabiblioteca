@@ -273,12 +273,22 @@ body {
 	border: 1px solid;
 	cursor: pointer;
 }
+
 /* ----------------------books TODOS LOS LIBROS-------------------------------- */
-.all-books-container {
-	width: 100%;
-	display: grid;
+.allbooks-container {
+	max-height: 3200px;
+	overflow-y: auto;
+}
+/* Scroll Personalizado */
+
+.allbooks-container::-webkit-scrollbar {
+	width: 7px;
 }
 
+.allbooks-container::-webkit-scrollbar-thumb {
+	background: var(--light-green);
+	border-radius: 5px;
+}
 /* ----------------------SIGN up-------------------------------- */
 .sign-up-img {
 	background: url('https://www.telam.com.ar/advf/imagenes/2020/09/5f63384895f9e_800x450.jpg');
@@ -454,6 +464,7 @@ a.mute {
 	margin: 0;
 	font-size: 18px;
 }
+
 .liked-book-card {
 	display: grid;
 	width: 100%;

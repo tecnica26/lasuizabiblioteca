@@ -23,4 +23,12 @@
 			{{>footer}}
 		</div>
 	</body>
+	<script>
+	const setBg = () => { const randomColor =Math.floor(Math.random()*16777215).toString(16); 
+	const color = "#" + randomColor; return color; }; 
+	const $likedBook=document.querySelectorAll('.liked-book'); 
+	$likedBook.forEach(el=>{if(el.style.backgroundImage==="url((unknown))"||el.style.backgroundColor==''){
+		el.style.backgroundColor=setBg(); } 
+	});
+	</script>
 </html>
