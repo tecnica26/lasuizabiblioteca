@@ -22,3 +22,15 @@ _Tecnologias backend_
 
 ---
 que lo disfrutes
+
+---
+admin
+la5u1z4borges
+--
+brandon
+brand0n123
+--
+git clone linko <br>
+npm install <br>
+crear archivo .env <br> 
+MONGODB_URI=mongodb+srv://admin-biblioteca:admin-biblioteca-password@primerclusterr.ak0sj.mongodb.net/lasuizabiblioteca?retryWrites=true&w=majority
