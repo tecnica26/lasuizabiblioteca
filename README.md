@@ -15,22 +15,15 @@ _Tecnologias backend_
 * [Npm](https://npmjs.com/) - Manejador de dependencias de nodejs
 * [Figma](https://figma.com/) - Usado para el diseño de las diferentes interfaces
 
-## Autores ✒️
+[Excel con los libros](https://docs.google.com/spreadsheets/d/1dTpMsIe-oh8zCCCRAPy-HssUYr_aEyEh/edit?usp=sharing&ouid=116385415134941326459&rtpof=true&sd=true)
 
-* **Brandon Porcel** - *Desarollo, Diseño* - [brandonporcel](https://instagram.com/brandonporcel)
-// * **PEPELINA PEPE** - *Documentación* - [escuela](#fulanito-de-tal)
+[Diseño de la página](https://www.figma.com/file/Hb3PE2YIh85jKc9YOtbMcF/biblioteca?node-id=0%3A1&t=k8dZ0AVSiLx8EDZD-1)
 
----
-que lo disfrutes
+![image](https://user-images.githubusercontent.com/66080281/205464144-bf39da40-4727-4f8f-ab8b-783215d3deca.png)
 
----
-admin
-la5u1z4borges
---
-brandon
-brand0n123
---
-git clone linko <br>
-npm install <br>
-crear archivo .env <br> 
-MONGODB_URI=mongodb+srv://admin-biblioteca:admin-biblioteca-password@primerclusterr.ak0sj.mongodb.net/lasuizabiblioteca?retryWrites=true&w=majority
+
+## Qué se puede hacer
+- Actualizar img de los libros
+- Actualizar los libros
+
+Cualquier aporte es bienvenido.
